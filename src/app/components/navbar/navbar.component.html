@@ -1,0 +1,32 @@
+<nav className='navbar'>
+    <div className='navbar-container'>   
+        <a routerLinkActive="active" routerLink="/">
+            MODEL
+            <!-- <img class="navbar-logo{{ mode }}"> -->
+        </a>
+
+        <ul class="navbar-items">
+            <li>
+                <a routerLinkActive="active" routerLink="/" class="navbar-item">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="/services" class="navbar-item">
+                    Services
+                </a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="/products" class="navbar-item">
+                    Products
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-item" (click)="showSideMenu()">
+            <div class="navbar-icon-hamburguer"></div>
+            <app-menu-sidebar [ngClass]="{'show-side-menu' : showMenu}"></app-menu-sidebar>
+        </div>
+    </div>
+</nav>
+
