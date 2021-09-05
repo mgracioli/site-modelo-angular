@@ -1,32 +1,37 @@
-<nav className='navbar'>
-    <div className='navbar-container'>   
-        <a routerLinkActive="active" routerLink="/">
-            MODEL
-            <!-- <img class="navbar-logo{{ mode }}"> -->
-        </a>
+<nav class='navbar'>
+    <div class='navbar-container'>   
+        <div class="navbar-brand">
+            <a class="navbar-brand-name" routerLinkActive="active" routerLink="/">
+                BRAND   
+            </a>
+            <a class="navbar-brand-logo" routerLinkActive="active" routerLink="/"></a>
+        </div>
 
-        <ul class="navbar-items">
-            <li>
-                <a routerLinkActive="active" routerLink="/" class="navbar-item">
+        <div class="navbar-menus">
+            <div class="navbar-menu">
+                <a class="navbar-item" routerLinkActive="active" routerLink="/">
                     Home
                 </a>
-            </li>
-            <li>
-                <a routerLinkActive="active" routerLink="/services" class="navbar-item">
+            </div>
+
+            <div class="navbar-menu">
+                <a class="navbar-item" routerLinkActive="active" routerLink="/services">
                     Services
                 </a>
-            </li>
-            <li>
-                <a routerLinkActive="active" routerLink="/products" class="navbar-item">
+            </div>
+
+            <div class="navbar-menu">
+                <a class="navbar-item" routerLinkActive="active" routerLink="/products">
                     Products
                 </a>
-            </li>
-        </ul>
-
-        <div class="navbar-item" (click)="showSideMenu()">
-            <div class="navbar-icon-hamburguer"></div>
-            <app-menu-sidebar [ngClass]="{'show-side-menu' : showMenu}"></app-menu-sidebar>
+            </div>
         </div>
+
+        <div class="navbar-hamburguer">
+            <div class="navbar-icon-hamburguer" (click)="showSideMenu()"></div>
+
+            <app-menu-sidebar [ngClass]="{'show-side-menu' : showMenu}"></app-menu-sidebar>
+        </div>   
     </div>
-</nav>
+</nav>   
 

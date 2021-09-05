@@ -8,17 +8,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class NavbarComponent implements OnInit {
 
-  mode: string = "day"
   showMenu: boolean = false
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  /*Método para mudar para modo noturno*/
-  changeMode(){
-
   }
 
   /* método para mostrar e esconder o menu lateral (hamburguer menu) */
