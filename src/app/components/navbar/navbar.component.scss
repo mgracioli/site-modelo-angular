@@ -67,24 +67,72 @@ nav{
     color: $font-color;
 }
 
+/* Configurações do menu hamburguer*/
 .navbar-hamburguer{
     width: 15%;
     height: inherit;
+    //position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
-.navbar-icon-hamburguer{
-    background-image: url('../../../assets/navbar/hamburg.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
+.menu-hamburguer{   //esse menu é só para melhorar (aumentar) a área de clique do menu hamburguer
+    width: 44px;
+    height: 42px;
+    position: relative;
 }
+
+.hamburguer{
+    display: block; //precisa do display block para definir o width e o height
+    position: absolute;
+    top: 19px;
+    left: 7px;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 30px;
+    height: 4px;
+    transition: 0.5s ease-in-out;   
+}
+
+.hamburguer::before, .hamburguer::after{
+    background-color: #fff;
+    content: "";
+    display: block;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+
+.hamburguer::before{
+    top: -8px;
+}
+
+.hamburguer::after{
+    bottom: -8px;
+}
+
+#hamburguer-check-box{
+    display: none;
+}
+
+#hamburguer-check-box:checked + label .hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
+    transform: rotate(45deg);
+}
+
+#hamburguer-check-box:checked + label .hamburguer::before{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+#hamburguer-check-box:checked + label .hamburguer::after{
+    transform: rotate(90deg);
+    bottom: 0;
+}
+/* fim das configurações do menu hamburguer*/
+
 
 @media only screen and (max-width: 500px){
     nav{

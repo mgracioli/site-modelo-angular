@@ -20,4 +20,6 @@ export class NavbarComponent implements OnInit {
     this.showMenu = !this.showMenu
   }
 
+  /* Configurações do icone do hamburguer */
+
 }

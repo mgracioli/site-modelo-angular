@@ -28,9 +28,15 @@
         </div>
 
         <div class="navbar-hamburguer">
-            <div class="navbar-icon-hamburguer" (click)="showSideMenu()"></div>
+            <!-- <div class="navbar-icon-hamburguer" (click)="showSideMenu()"></div> -->
+            <input id="hamburguer-check-box" type="checkbox">   <!-- a input serve para verificar quando o menu for clicado -->
+            <label for="hamburguer-check-box">  <!--o for faz referência ao id da checkbox-->
+                <div class="menu-hamburguer">
+                    <span class="hamburguer"></span>
+                </div>
+            </label>
 
-            <app-menu-sidebar [ngClass]="{'show-side-menu' : showMenu}"></app-menu-sidebar>
+            <!-- <app-menu-sidebar [ngClass]="{'show-side-menu' : showMenu}"></app-menu-sidebar> -->
         </div>   
     </div>
 </nav>   
