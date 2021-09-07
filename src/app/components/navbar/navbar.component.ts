@@ -8,18 +8,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class NavbarComponent implements OnInit {
 
-  showMenu: boolean = false
-
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  /* método para mostrar e esconder o menu lateral (hamburguer menu) */
-  showSideMenu(){
-    this.showMenu = !this.showMenu
-  }
-
-  /* Configurações do icone do hamburguer */
+  ngOnInit(): void {}
 
 }

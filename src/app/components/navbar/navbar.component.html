@@ -1,12 +1,14 @@
 <nav class='navbar'>
-    <div class='navbar-container'>   
+    <div class='navbar-container'>  
+        <input id="hamburguer-check-box" type="checkbox">   <!-- essa input serve para verificar quando o menu hamburguer for clicado, precisa fica aqui antes de tudo pois ela só consegue pegar elementos que estão depois dela -->
+
         <div class="navbar-brand">
             <a class="navbar-brand-name" routerLinkActive="active" routerLink="/">
                 BRAND   
             </a>
             <a class="navbar-brand-logo" routerLinkActive="active" routerLink="/"></a>
         </div>
-
+        
         <div class="navbar-menus">
             <div class="navbar-menu">
                 <a class="navbar-item" routerLinkActive="active" routerLink="/">
@@ -28,15 +30,11 @@
         </div>
 
         <div class="navbar-hamburguer">
-            <!-- <div class="navbar-icon-hamburguer" (click)="showSideMenu()"></div> -->
-            <input id="hamburguer-check-box" type="checkbox">   <!-- a input serve para verificar quando o menu for clicado -->
             <label for="hamburguer-check-box">  <!--o for faz referência ao id da checkbox-->
                 <div class="menu-hamburguer">
                     <span class="hamburguer"></span>
                 </div>
             </label>
-
-            <!-- <app-menu-sidebar [ngClass]="{'show-side-menu' : showMenu}"></app-menu-sidebar> -->
         </div>   
     </div>
 </nav>   

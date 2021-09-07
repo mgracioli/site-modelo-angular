@@ -15,9 +15,10 @@ nav{
 
 .navbar-container{
     display: flex;
+    justify-content: space-between;
     background-color: #242424;
     box-sizing: border-box;
-    height: 50px;
+    height: 60px;
 }
 
 .navbar-brand{
@@ -46,23 +47,23 @@ nav{
 
 .navbar-menus{
     display: flex;
-    justify-content: end;
-    align-items: center;
-    width: 65%;
+    width: 45%;
     height: inherit;
 }
 
 .navbar-menu{
-    margin-right: 50px;
-    transition: border 0.3s ease-out;
-}
-
-.navbar-menu:hover{
-    border-bottom: 5px solid #fff;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    position: relative;
 }
 
 .navbar-item{
     text-decoration: none;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 2em; //2em = 20px
     color: $font-color;
 }
@@ -71,8 +72,7 @@ nav{
 .navbar-hamburguer{
     width: 15%;
     height: inherit;
-    //position: relative;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -80,7 +80,16 @@ nav{
 .menu-hamburguer{   //esse menu é só para melhorar (aumentar) a área de clique do menu hamburguer
     width: 44px;
     height: 42px;
+    background-color: #555555;
+    border-radius: 50%;
     position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 #555555, 0 0 0 0 #555555;  //esse é o ponto inicial do shadow, se nao definir o estado inicial ele começa a partir do final da borda do menu e deixa uma linha sem preencher ao redor do menu
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+.menu-hamburguer:hover{
+    box-shadow: 0 0 0 8px #545454, 0 0 0 8px #555555; //8px é o raio
 }
 
 .hamburguer{
@@ -118,65 +127,78 @@ nav{
     display: none;
 }
 
-#hamburguer-check-box:checked + label .hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
+#hamburguer-check-box:checked ~ .navbar-hamburguer .menu-hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
+    box-shadow: 0 0 0 130vw #555555, 0 0 0 130vh #555555;
+}
+
+#hamburguer-check-box:checked ~ .navbar-hamburguer .hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
     transform: rotate(45deg);
 }
 
-#hamburguer-check-box:checked + label .hamburguer::before{
+#hamburguer-check-box:checked ~ .navbar-hamburguer .hamburguer::before{
     transform: rotate(90deg);
     top: 0;
 }
 
-#hamburguer-check-box:checked + label .hamburguer::after{
+#hamburguer-check-box:checked ~ .navbar-hamburguer .hamburguer::after{
     transform: rotate(90deg);
     bottom: 0;
 }
 /* fim das configurações do menu hamburguer*/
 
-
 @media only screen and (max-width: 500px){
-    nav{
-        font-size: 7px; //diminui o tamanho da fonte da nav o que faz diminuir, automaticamente, o tamanho de da fonte de toda a navbar uma vez que a unidade de tamanho é a "em"
-    }
+    // .navbar-brand{
+    //     width: 70%; //não está funcionando
+    // }
 
-    .navbar-brand-logo{
-        width: 20px;
-        height: 20px;
-    }
-
-    .navbar-brand{
-        width: 30%;
+    #hamburguer-check-box:checked ~ .navbar-brand{
+        visibility: hidden; //hidden para que essa parte da navbar nao fique ativa por trás da navbar-menus
+        transition: 0.3s;
     }
 
     .navbar-menus{
-        visibility: hidden;
+        display: none;
+    }
+    
+    #hamburguer-check-box:checked ~ .navbar-menus{
+        display: flex; 
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        height: 90vh;
+        z-index: 1;
+        transition: .25s 1s cubic-bezier(0, 1.05, 0, 1.20);
+    }
+
+    .navbar-menu{
+        height: 25%;
+    }
+
+    .navbar-menu:hover{
+        background-color: #777777;
+    }
+
+    .navbar-item{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
     .navbar-hamburguer{
-        width: 30%;
+        display: flex;
     }
-
 }
 
 @media only screen and (max-width: 700px){
-    .navbar-item{
-        font-size: 1.5em;
-    }
-
     .navbar-brand{
         width: 35%;
     }
 
     .navbar-menus{
-        width: 50%;
-    }
-
-    .navbar-menu{
-        margin-right: 15px;
-    }
-
-    .navbar-hamburguer{
-        width: 15%;
+        width: 65%;
     }
 }
 
