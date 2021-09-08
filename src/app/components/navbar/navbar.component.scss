@@ -1,75 +1,86 @@
 //variáveis globais
-$font-color: white;
+$white: white;
+$dark-grey: #242424;
 
 nav{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
 }
 
-.navbar{
+/*as classes estão com nome nav-x para não dar conflito com as classes do bootstrap*/
+
+.navb{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-.navbar-container{
+.navb-container{
     display: flex;
     justify-content: space-between;
-    background-color: #242424;
+    align-items: center;
+    background-color: $dark-grey;
     box-sizing: border-box;
     height: 60px;
 }
 
-.navbar-brand{
+.navb-brand{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 20%;
-    height: inherit;
+    height: 100%;
 }
 
-.navbar-brand-name{
+.navb-brand-name{
     font-size: 3em; //3em = 30px
     font-weight: 700;
-    color: $font-color;
+    color: $white;
     text-decoration: none;
 }
 
-.navbar-brand-logo{
-    background-image: url('../../../assets/navbar/brand-logo.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+.navb-brand-logo img{
     width: 30px;
     height: 30px;
 }
 
-.navbar-menus{
+.navb-menus{
     display: flex;
+    align-items: center;
     width: 45%;
-    height: inherit;
+    height: 100%;
+    padding: 0;    //por algum motivo, existe um padding e uma margem na navbar-menus, por isso tive que colocar esse 0
+    margin: 0;
 }
 
-.navbar-menu{
+.navb-menu{
     width: 100%;
     height: 100%;
     transition: all 0.2s ease-in-out;
     position: relative;
+    list-style: none;
 }
 
-.navbar-item{
+.navb-item{
     text-decoration: none;
     position: absolute;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 20px;
     font-size: 2em; //2em = 20px
-    color: $font-color;
+    color: $white;
+    text-decoration: none;
+    border: 5px solid $dark-grey;
+    box-sizing: border-box; //border box para o item ficar dentro da navbar-menus e da navbar-container
+    line-height: 50px;  //centraliza o texto na vertical
+    transition: border 0.4s linear;
+}
+
+.navb-item:hover{
+    border-bottom: 5px solid #3e707b;
 }
 
 /* Configurações do menu hamburguer*/
-.navbar-hamburguer{
+.navb-hamburguer{
     width: 15%;
     height: inherit;
     display: none;
@@ -97,7 +108,7 @@ nav{
     position: absolute;
     top: 19px;
     left: 7px;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 3px;
     width: 30px;
     height: 4px;
@@ -105,7 +116,7 @@ nav{
 }
 
 .hamburguer::before, .hamburguer::after{
-    background-color: #fff;
+    background-color: $white;
     content: "";
     display: block;
     border-radius: 3px;
@@ -127,40 +138,40 @@ nav{
     display: none;
 }
 
-#hamburguer-check-box:checked ~ .navbar-hamburguer .menu-hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
+#hamburguer-check-box:checked ~ .navb-hamburguer .menu-hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
     box-shadow: 0 0 0 130vw #555555, 0 0 0 130vh #555555;
 }
 
-#hamburguer-check-box:checked ~ .navbar-hamburguer .hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
+#hamburguer-check-box:checked ~ .navb-hamburguer .hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
     transform: rotate(45deg);
 }
 
-#hamburguer-check-box:checked ~ .navbar-hamburguer .hamburguer::before{
+#hamburguer-check-box:checked ~ .navb-hamburguer .hamburguer::before{
     transform: rotate(90deg);
     top: 0;
 }
 
-#hamburguer-check-box:checked ~ .navbar-hamburguer .hamburguer::after{
+#hamburguer-check-box:checked ~ .navb-hamburguer .hamburguer::after{
     transform: rotate(90deg);
     bottom: 0;
 }
 /* fim das configurações do menu hamburguer*/
 
 @media only screen and (max-width: 500px){
-    // .navbar-brand{
-    //     width: 70%; //não está funcionando
-    // }
-
-    #hamburguer-check-box:checked ~ .navbar-brand{
+    #hamburguer-check-box:checked ~ .navb-brand{
         visibility: hidden; //hidden para que essa parte da navbar nao fique ativa por trás da navbar-menus
         transition: 0.3s;
     }
 
-    .navbar-menus{
+    .navb-container{
+        justify-content: space-evenly;
+    }
+
+    .navb-menus{
         display: none;
     }
     
-    #hamburguer-check-box:checked ~ .navbar-menus{
+    #hamburguer-check-box:checked ~ .navb-menus{
         display: flex; 
         flex-direction: column;
         justify-content: flex-start;
@@ -172,32 +183,37 @@ nav{
         transition: .25s 1s cubic-bezier(0, 1.05, 0, 1.20);
     }
 
-    .navbar-menu{
+    .navb-menu{
         height: 25%;
     }
 
-    .navbar-menu:hover{
+    .navb-menu:hover{
         background-color: #777777;
     }
 
-    .navbar-item{
+    .navb-item{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        border: 0;
     }
 
-    .navbar-hamburguer{
+    .navb-item:hover{
+        border: 0;
+    }
+
+    .navb-hamburguer{
         display: flex;
     }
 }
 
 @media only screen and (max-width: 700px){
-    .navbar-brand{
+    .navb-brand{
         width: 35%;
     }
 
-    .navbar-menus{
+    .navb-menus{
         width: 65%;
     }
 }
