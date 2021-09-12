@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
   {
@@ -9,19 +10,18 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule),
+    component: HomeComponent,
+  },
+  {
+    path: 'products',
+    loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule),
+  },
+  { 
+    path: 'users', 
+    loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) 
   },
   
 
-  // {
-  //   path: 'cursos',
-  //   loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
-  // },
-
-  // {
-  //   path: 'services',
-  //   component: 
-  // },
   /* path: '**' é o caminho para rotas nao econtradas, quando o usuário digita uma rota que não existe ele é direcionado para essa página, que é a de erro 404 */
   // {
   //   path: '**',
