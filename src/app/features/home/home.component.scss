@@ -1,4 +1,5 @@
 $white: #fff;
+$dark-grey: #242424;
 
 .home-container{
     margin-top: 60px;   //margem referente à navbar
@@ -37,7 +38,7 @@ $white: #fff;
     color: #fff;
     padding: 8px 40px;
     border: 1px solid $white;
-    font-size: 1em;
+    font-size: 2em;
     text-decoration: none;
 }
 
@@ -49,8 +50,8 @@ $white: #fff;
 }
 
 .content-site{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 
 .content-site h2{
@@ -60,4 +61,29 @@ $white: #fff;
 .content-site p{
     padding-bottom: 30px;
     font-size: 1.5em;
+}
+
+.your-products-container{
+    color: $white;
+    background-color: #234d59;
+    height: 50vh;
+    position: relative;
+}
+
+.your-products-content{  
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    align-content: center;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.your-products-content p{
+    font-size: 2em;
+    padding: 0 15px 10px;
+}
+
+.row{
+    justify-content: center;
 }

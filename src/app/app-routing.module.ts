@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { LoginComponent } from './features/login/login.component';
+import { AuthGuardService } from './shared/guards/auth-guard.service';
+
 
 const routes: Routes = [
   {
@@ -18,7 +21,12 @@ const routes: Routes = [
   },
   { 
     path: 'users', 
-    loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) 
+    loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule),
+    canLoad: [AuthGuardService] /* o canLoad é aplicado a todas as rotas onde é aplicado o lazy load, porque assim, se o usuário não tiver permissao de acesso a essa rota, o navegador não vai fazer o download do código fonte dessas rotas na memória, essa é a diferneça entre o canLoad e o canActivate, que nao permite acesso a rota, porém permite o download do codigo fonte da rota na memória do navegador. Lambrando que o lazy load está relacionado ao carregamento das rotas filhas, que só são carregadas quando o usuário acessa a rota pai delas */
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   
 

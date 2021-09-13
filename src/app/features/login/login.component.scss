@@ -1,0 +1,64 @@
+$white: #fff;
+$dark-grey: #242424;
+
+.login-container{
+    margin-top: 60px;   //margem referente à navbar
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
+    padding: 25px 0px;
+}
+
+.login-brand-name{
+    font-size: 3em; //3em = 30px
+    font-weight: 600;
+    color: $white;
+    text-decoration: none;
+    color: $dark-grey;
+}
+
+.login-card-data{
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 20px 20px; //padding se aplica àquilo que está dentro do elemento e, não, ao elemento em si
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 47vh;
+    margin-top: 20px;
+}
+
+.usuario, .senha{
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.senha label{
+    width: 50%;
+}
+
+.senha label + label{   //label + label é para o css selecionar a primeiro label que vier depois de uma outra label, ou seja, dentro da classe .senha, procure uma label, na próxima label aplica o text-align
+    text-align: right;
+}
+
+.senha a{
+    text-decoration: none;
+}
+
+.btn-outline{
+    background-color: #234d59;
+    color: $white;
+    padding: 8px 40px;
+    border: 1px solid $dark-grey;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.btn-outline:hover{
+    background: #2c606e;
+    border-color: #234e58;
+    color: $white;
+    transition: all 0.3s ease-out;
+    transition: 250ms;
+}

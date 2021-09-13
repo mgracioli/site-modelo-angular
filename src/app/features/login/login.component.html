@@ -1,0 +1,26 @@
+<div class="login-container">
+
+    <div class="container text-center col-sm-12">
+        <a class="login-brand-name" routerLinkActive="active" routerLink="">
+            BRAND.com.br
+        </a>
+    </div>
+
+    <div class="login-card-data container col-xs-8 col-md-6 col-lg-4">
+        <h2>
+            Fazer login
+        </h2>
+
+        <div class="form-group usuario">
+            <label for="usuario">Usuário</label>
+            <input [(ngModel)]="usuario.nome" type="text" class="form-control" id="usuario">
+        </div>
+
+        <div class="form-group senha">
+            <label for="senha">Senha</label><label ><a routerLinkActive="active" routerLink="/">Esqueci a senha</a></label>
+            <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="senha">
+        </div>
+
+        <button type="submit" class="btn-outline" (click)="fazerLogin()">LOGIN</button>
+    </div>
+</div>
