@@ -1,0 +1,74 @@
+$white: #fff;
+$dark-grey: #242424;
+
+.create-account-container{
+    margin-top: 60px;   //margem referente à navbar
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
+    padding: 25px 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.login-brand-name{
+    font-size: 3em; //3em = 30px
+    font-weight: 600;
+    color: $white;
+    text-decoration: none;
+    color: $dark-grey;
+}
+
+.create-account-data{
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 20px 20px; //padding se aplica àquilo que está dentro do elemento e, não, ao elemento em si
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 83vh;
+    margin-top: 20px;
+}
+
+.user, .email, .password, .password-repeat{
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.btn-create-account{
+    background-color: #5fa371;
+    border: 1px solid #2d4e36;
+    color: $white;
+    padding: 8px 0;
+    border: 1px solid $dark-grey;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.btn-create-account:hover{
+    background-color: #549265;
+    color: $white;
+    transition: all 0.3s ease-out;
+    transition: 250ms;
+}
+
+.terms-of-use-link{
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.create-account-span{
+    font-size: 1.3em;
+    color: #4d4d4d;
+    position: relative;
+    width: 100%;
+    padding-top: 13px;
+    border-style: solid;
+    border-radius: 4px;
+    //REMOVER A MARGEM DE BAIXO
+    border-image: linear-gradient(to right, rgba(238, 238, 238, 0.281), rgba(155, 155, 155, 0.226), rgba(238, 238, 238, 0.281))100% 1;
+    border-bottom: 0px; //nao é legal fazer assim será?
+    //border-top: 2px solid linear-gradient(to right, rgba(238, 238, 238, 0.281), rgba(155, 155, 155, 0.226), rgba(238, 238, 238, 0.281));
+}

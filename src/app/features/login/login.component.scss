@@ -45,20 +45,70 @@ $dark-grey: #242424;
     text-decoration: none;
 }
 
-.btn-outline{
+.btn-login{
     background-color: #234d59;
     color: $white;
-    padding: 8px 40px;
+    padding: 8px 0;
     border: 1px solid $dark-grey;
     text-decoration: none;
     font-size: 1.5em;
     font-weight: 600;
 }
 
-.btn-outline:hover{
+.btn-login:hover{
     background: #2c606e;
     border-color: #234e58;
     color: $white;
     transition: all 0.3s ease-out;
+    transition: 250ms;
+}
+
+.create-account-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    height: 18vh;
+    text-align: center;
+}
+
+.create-account-span{
+    font-size: 1.3em;
+    color: #6d6d6d;
+    position: relative;
+    width: 100%;
+}
+
+.create-account-span::before, .create-account-span::after{
+    position: absolute;
+    content: '';
+    width: 29%;
+    height: 1px;
+    bottom: 50%;
+    background: #c7c7c7;
+    border-radius: 4px;
+}
+
+.create-account-span::before{
+    position: absolute;
+    left: 0;
+}
+
+.create-account-span::after{
+    right: 0;
+}
+
+.btn-create-account{
+    font-size: 1.5em;
+    background-color: #5fa371;
+    border: 1px solid #2d4e36;
+    color: $white;
+    padding: 8px 45px;
+    text-decoration: none;
+}
+
+.btn-create-account:hover{
+    background-color: #549265;
     transition: 250ms;
 }

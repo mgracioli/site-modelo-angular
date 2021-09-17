@@ -1,5 +1,4 @@
 <div class="login-container">
-
     <div class="container text-center col-sm-12">
         <a class="login-brand-name" routerLinkActive="active" routerLink="">
             BRAND.com.br
@@ -21,6 +20,12 @@
             <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="senha">
         </div>
 
-        <button type="submit" class="btn-outline" (click)="fazerLogin()">LOGIN</button>
+        <button type="submit" class="btn-login" (click)="fazerLogin()">LOGIN</button>
+    </div>
+
+    <div class="create-account-container container col-xs-8 col-md-6 col-lg-4">
+        <span class="create-account-span">Don't have an account?</span>
+    
+        <a class="btn-create-account" routerLinkActive="active" routerLink="new-account">Create Account</a>
     </div>
 </div>
