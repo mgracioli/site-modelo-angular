@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoreRoutingModule } from './core-routing.module';
+import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-top-button.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollTopButtonComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { CoreRoutingModule } from './core-routing.module';
   ],
   exports:[
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollTopButtonComponent
   ]
 })
 export class CoreModule { }

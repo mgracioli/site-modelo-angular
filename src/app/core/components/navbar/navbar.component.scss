@@ -106,16 +106,16 @@ nav{
 .menu-hamburguer{   //esse menu é só para melhorar (aumentar) a área de clique do menu hamburguer
     width: 44px;
     height: 42px;
-    background-color: #555555;
+    background-color: #234d59;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 0 0 0 #555555, 0 0 0 0 #555555;  //esse é o ponto inicial do shadow, se nao definir o estado inicial ele começa a partir do final da borda do menu e deixa uma linha sem preencher ao redor do menu
+    box-shadow: 0 0 0 0 #234d59, 0 0 0 0 #234d59;  //esse é o ponto inicial do shadow, se nao definir o estado inicial ele começa a partir do final da borda do menu e deixa uma linha sem preencher ao redor do menu
     transition: box-shadow 0.4s ease-in-out;
 }
 
 .menu-hamburguer:hover{
-    box-shadow: 0 0 0 8px #545454, 0 0 0 8px #555555; //8px é o raio
+    box-shadow: 0 0 0 8px #234d59, 0 0 0 8px #234d59; //8px é o raio
 }
 
 .hamburguer{
@@ -154,7 +154,7 @@ nav{
 }
 
 #hamburguer-check-box:checked ~ .navb-hamburguer .menu-hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
-    box-shadow: 0 0 0 130vw #555555, 0 0 0 130vh #555555;
+    box-shadow: 0 0 0 150vw #234d59, 0 0 0 150vh #102329;
 }
 
 #hamburguer-check-box:checked ~ .navb-hamburguer .hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
@@ -203,7 +203,7 @@ nav{
     }
 
     .navb-menu:hover{
-        background-color: #777777;
+        background-color: #2d6474;
     }
 
     .navb-item{

@@ -8,6 +8,30 @@ $dark-grey: #242424;
     text-decoration: none;
 }
 
+.cards{
+    padding: 20px 0px;
+}
+
+.thumbnail-container{
+    padding: 15px;
+}
+
+.thumbnail{
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 9px;
+    transition: all 0.3s ease-in-out;
+}
+
+.thumbnail:hover{
+    box-shadow: 3px 2px 10px #a5a5a5da;
+}
+
+.home-thumb{
+    text-decoration: none;
+    color: #242424;
+}
+
 .home-thumb img{
     width: 100%;
     height: 180px;
@@ -60,31 +84,32 @@ $dark-grey: #242424;
 }
 
 .content-site p{
-    padding-bottom: 30px;
     font-size: 1.5em;
 }
 
-.your-products-container{
-    color: $white;
+.your-products-container{   
     background-color: #234d59;
-    height: 50vh;
+    height: 45vh;
     position: relative;
+    padding: 15px;
 }
 
 .your-products-content{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    align-content: center;
-    transform: translateY(-50%);
+    height: 100%;
+    color: $white;
     text-align: center;
 }
 
 .your-products-content p{
     font-size: 2em;
-    padding: 0 15px 10px;
 }
 
 .row{
     justify-content: center;
 }
+
