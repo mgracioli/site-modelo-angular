@@ -15,9 +15,9 @@ export class ScrollTopButtonComponent implements OnInit {
     window.addEventListener('scroll', this.showScrollTopButton)
   }
 
-  //mostra o botão só quando já tiver feito scroll na página
+  //mostra o botão de scroll top só quando já tiver feito scroll na página
   showScrollTopButton(){
-    const btn = document.querySelector<HTMLElement>('.btn-border')
+    const btn = document.querySelector<HTMLElement>('.btn-container')
 
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
       btn!.style.display = "block";

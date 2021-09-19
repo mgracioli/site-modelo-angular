@@ -18,21 +18,25 @@ a{
     color: $white;
     text-decoration: none;
     color: $dark-grey;
+    padding-bottom: 20px;
 }
 
 .create-account-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     padding: 20px 20px; //padding se aplica àquilo que está dentro do elemento e, não, ao elemento em si
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-    height: 83vh;
-    margin-top: 20px;
+    height: 600px;
 }
 
-.user, .email, .password, .password-repeat{
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
     font-size: 1.3em;
     font-weight: 700;
 }
@@ -41,8 +45,7 @@ a{
     background-color: #5fa371;
     border: 1px solid #2d4e36;
     color: $white;
-    padding: 8px 0;
-    border: 1px solid $dark-grey;
+    padding: 6px 0;
     font-size: 1.5em;
     font-weight: 600;
 }

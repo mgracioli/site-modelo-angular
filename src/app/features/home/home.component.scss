@@ -6,10 +6,72 @@ $dark-grey: #242424;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
     text-decoration: none;
+    width: 100%;
+}
+
+.header-site{
+    background-image: url('/assets/home/home-paralax.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;   //essa configuração é que gera o efeito parallax
+    color: $white;
+    height: 80vh;
+}
+
+.header-content h1{
+    font-size: 3.5em;
+    font-weight: 600;
+}
+
+.header-content{
+    padding: 0;
+    width: 85%;
+}
+
+.header-content p{
+    font-size: 2em;
+}
+
+.btn-outline{
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 10px;
+    border: 1px solid $white;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.btn-outline:hover{
+    background: #fff;
+    color: #242424;
+    transition: all 0.3s ease-out;
+    transition: 250ms;
+}
+
+.btn-sign-in{
+    padding: 8px 70px;
+}
+
+.content-site{
+    padding-top: 90px;
+    padding-bottom: 90px;
+    text-align: center;
+}
+
+
+/*Seção dos CARDS*/
+.content-site h2{
+    font-size: 3em;
+}
+
+.content-site p{
+    font-size: 1.5em;
 }
 
 .cards{
     padding: 20px 0px;
+    width: 100%;
 }
 
 .thumbnail-container{
@@ -17,6 +79,8 @@ $dark-grey: #242424;
 }
 
 .thumbnail{
+    height: 100%;
+    width: 100%;
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     padding: 9px;
@@ -32,84 +96,33 @@ $dark-grey: #242424;
     color: #242424;
 }
 
+.home-thumb p{
+    margin: 0;
+}
+
 .home-thumb img{
     width: 100%;
-    height: 180px;
     object-fit: cover;
 }
 
-.header-site{
-    background-image: url('/assets/home/home-paralax.jpg');
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;   //essa configuração é que gera o efeito parallax
-    color: $white;
-    padding-top: 30vh;
-    padding-bottom: 30vh;
+.card-caption{
+    padding-top: 15px;
 }
 
-.header-site h1{
-    font-size: 3.5em;
-    font-weight: 600;
-}
-
-.header-site p{
-    font-size: 2em;
-}
-
-.btn-outline{
-    background-color: transparent;
-    color: #fff;
-    padding: 8px 40px;
-    border: 1px solid $white;
-    font-size: 2em;
-    text-decoration: none;
-}
-
-.btn-outline:hover{
-    background: #fff;
-    color: #242424;
-    transition: all 0.3s ease-out;
-    transition: 250ms;
-}
-
-.content-site{
-    padding-top: 90px;
-    padding-bottom: 90px;
-}
-
-.content-site h2{
-    font-size: 3em;
-}
-
-.content-site p{
-    font-size: 1.5em;
-}
-
-.your-products-container{   
+.your-products{  
     background-color: #234d59;
-    height: 45vh;
-    position: relative;
     padding: 15px;
-}
-
-.your-products-content{  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 40vh;
     width: 100%;
-    height: 100%;
     color: $white;
-    text-align: center;
 }
 
-.your-products-content p{
+.your-products p{
     font-size: 2em;
 }
 
 .row{
+    margin: 0;
     justify-content: center;
 }
 

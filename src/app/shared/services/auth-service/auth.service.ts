@@ -7,10 +7,9 @@ import { Usuario } from './usuario';
 })
 
 /*  SERVIÇO PARA AUTENTICAÇÃO DO USUÁRIO, VERIFICA SE O USUÁRIO ESTÁ LOGADO */
-
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
+  private usuarioAutenticado: boolean = false;  //informa para a rota de guarda se o usuário já está autenticado para poder acessar as rotas
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(private router: Router) { }

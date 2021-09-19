@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,7 @@ import { HomeComponent } from './features/home/home.component';
     AppRoutingModule,
     CoreModule,  //necessário para poder usar os seletores da navabr e do footer no app.component.html
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     

@@ -1,46 +1,56 @@
 <div class="create-account-container">
-    <div class="container text-center col-sm-12">
-        <a class="login-brand-name" routerLinkActive="active" routerLink="">
+    <div class="row text-center">
+        <a class="login-brand-name col-sm-12" routerLinkActive="active" routerLink="">
             BRAND.com.br
         </a>
     </div>
 
-    <div class="create-account-data container col-xs-8 col-md-6 col-lg-4">
-        <h2>
-            Create Account
-        </h2>
-    
-        <div class="form-group user">
-            <label for="user">Username</label>
-            <input type="text" class="form-control" id="user">
-        </div>
-
-        <div class="form-group email">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email">
-        </div>
-    
-        <div class="form-group password">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password">
+    <div class="row">
+        <div class="create-account-data container col-xs-8 col-md-6 col-lg-4">
+            <h2>
+                Create Account
+            </h2>
             
-            <i class="bi bi-eye-fill"></i>
-        </div>
-
-        <div class="form-group password-repeat">
-            <label for="password-repeat">Repeat password</label>
-            <input type="password" class="form-control" id="password-repeat">
-            
-            <i class="bi bi-eye-fill"></i>
-        </div>
+            <!--formGroupName="endereco" é o grupo maior que engloba os campos de cep, numero, complemento, bairro, cidade e estado, assim como foi feito lá no .ts-->
+            <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()"> <!-- [formGroup] é o que vai vincular a minha variavel formulario lá do .ts com esse formulario aqui -->       
+                <div class="form-group username">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" formControlName="username" id="username">
+                </div>
     
-        <button type="submit" class="btn-create-account" (click)="criarConta()">Create Account</button>
-        
-        <p class="terms-of-use-link">Upon creating an account, you agree to Brand's <a routerLink='#'>Terms of Use</a>. 
-            Please check our website <a routerLink='#'>Cookies Policy</a>.
-        </p>
-
-        <span class="create-account-span">Already have an account? <a routerLinkActive="active" routerLink="/login">Login</a></span>
-    </div>
+                <div class="form-group email">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" formControlName="email" id="email">
+                </div>
+            
+                <div class="form-group password">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" formControlName="password" id="password">
+                    
+                    <!-- <i class="bi bi-eye-fill"></i> -->
+                </div>
+    
+                <div class="form-group cep">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" formControlName="cep" id="cep">
+                </div>
+    
+                <div class="form-group logradouro">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" class="form-control" formControlName="logradouro" id="logradouro">
+                </div>
+            
+                <button type="submit" class="btn-create-account">Create Account</button>    
+            </form>
+    
+            <p class="terms-of-use-link">Upon creating an account, you agree to Brand's <a routerLink='#'>Terms of Use</a>. 
+                Please check our website <a routerLink='#'>Cookies Policy</a>.
+            </p>
+    
+            <span class="create-account-span">Already have an account? <a routerLinkActive="active" routerLink="/login">Login</a></span>
+        </div>
+    </div>   
 </div>
+
+
 
