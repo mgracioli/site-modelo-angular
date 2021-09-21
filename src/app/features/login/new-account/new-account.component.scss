@@ -18,7 +18,7 @@ a{
     color: $white;
     text-decoration: none;
     color: $dark-grey;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .create-account-data{
@@ -29,23 +29,35 @@ a{
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     padding: 20px 20px; //padding se aplica àquilo que está dentro do elemento e, não, ao elemento em si
-    height: 600px;
+    height: 800px;
 }
 
 .form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    height: 600px;
     font-size: 1.3em;
     font-weight: 700;
+    margin-top: 15px;
+}
+
+.address{
+    display: grid;
+    height: 340px;
+}
+
+.grid-template-columns-2{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
 }
 
 .btn-create-account{
     background-color: #5fa371;
     border: 1px solid #2d4e36;
     color: $white;
-    padding: 6px 0;
+    height: 40px;
     font-size: 1.5em;
     font-weight: 600;
 }
@@ -59,19 +71,17 @@ a{
 
 .terms-of-use-link{
     font-size: 1.1em;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
-.create-account-span{
+.already-have-account-span{
     font-size: 1.3em;
     color: #4d4d4d;
     position: relative;
     width: 100%;
-    padding-top: 13px;
+    padding-top: 10px;
     border-style: solid;
     border-radius: 4px;
-    //REMOVER A MARGEM DE BAIXO
     border-image: linear-gradient(to right, rgba(238, 238, 238, 0.281), rgba(155, 155, 155, 0.226), rgba(238, 238, 238, 0.281))100% 1;
-    border-bottom: 0px; //nao é legal fazer assim será?
-    //border-top: 2px solid linear-gradient(to right, rgba(238, 238, 238, 0.281), rgba(155, 155, 155, 0.226), rgba(238, 238, 238, 0.281));
+    border-bottom: none; 
 }

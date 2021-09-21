@@ -1,26 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../../shared/services/auth-service/auth.service';
-import { Usuario } from '../../shared/services/auth-service/usuario';
+import { User } from '../../shared/services/auth-service/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
+	user: User = new User();
 
-  usuario: Usuario = new Usuario();
+	constructor(private authService: AuthService) { }
 
-  constructor(private authService: AuthService) { }
+	ngOnInit() {
+	}
 
-  ngOnInit() {
-  }
-
-  fazerLogin(){
-    this.authService.fazerLogin(this.usuario);
-  }
-
-
+	login() {
+		this.authService.login(this.user);
+	}
 }

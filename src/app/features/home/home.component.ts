@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  deletarScrollButton: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {

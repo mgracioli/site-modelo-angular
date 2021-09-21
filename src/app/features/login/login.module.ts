@@ -6,6 +6,7 @@ import { LoginComponent } from './login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CepService } from 'src/app/shared/services/cep-service/cep.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule, //esse modulo é necessario por conta do new-account.ts, lá eu uso uma injeção de dependência desse módulo, por isso precisa importar aqui
+  ],
+  providers: [
+    CepService
   ]
 })
 export class LoginModule { }

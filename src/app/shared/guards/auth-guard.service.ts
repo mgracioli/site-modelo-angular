@@ -17,12 +17,12 @@ export class AuthGuardService implements CanLoad { /* CanLoad: função de não 
     private router: Router) { }
 
   canLoad(route: Route) : Observable<boolean> | boolean{
-    return this.verificarAcesso();
+    return this.verifyAccess();
   }
 
-  private verificarAcesso(){
-    if(this.authService.usuarioEstaAuteticado()){
-      return true;
+  private verifyAccess(){
+    if(this.authService.userIsAuthenticated()){
+      return true;  //retornando true, o usuário poderá acessar a página
     }
     this.router.navigate(['/login']); //se o usuário não estiver autenticado, volta para a página de login
     return false;
