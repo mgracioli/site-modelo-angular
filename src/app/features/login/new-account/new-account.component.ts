@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormValidations } from 'src/app/shared/form-validations/form-validations';
 import { CepService } from '../../../shared/services/cep-service/cep.service';
+import { distinctUntilChanged, switchMap } from 'rxjs/operators'
+import { empty, of } from 'rxjs';
 
 @Component({
 	selector: 'app-new-account',
@@ -24,7 +27,7 @@ export class NewAccountComponent implements OnInit {
 			email: [null, [Validators.required, Validators.email]],
 			password: [null, Validators.required],
 			address: this.formBuilder.group({
-				cep: [null, Validators.required],
+				cep: [null, Validators.required, FormValidations.cepValidator],
 				street: [null],
 				number: [null],
 				complement: [null],
@@ -47,7 +50,6 @@ export class NewAccountComponent implements OnInit {
 					this.formulario.reset();
 				}, (erro) => { alert('Error when logging in, please try again') })  //mensagem caso o backend retorne algum erro
 		} else {
-			alert('Required fields must be filled')
 			this.verifyFormValidations(this.formulario)
 		}
 	}
@@ -74,7 +76,7 @@ export class NewAccountComponent implements OnInit {
 	/* Método para verificar se o campo está válido (se passou com sucesso pelos Vlidators) e se foi dado foco nele (touched) durante o preenchimento das inputs */
 	applyCssFieldError(field: string) {
 		return {
-			'has-error': !this.formulario.get(field)!.valid && this.formulario.get(field)!.touched //this.formulario.get(field) retorna uma instancia do campo correspondente do formulário criado lá no ngOnInit() - has-error é a classe do Bootstrap que vai ser aplicada no elemento caso o campo não esteja válido (caso não tenha passado com sucesso pelos Validators) e tenha sido tocado (touched)      
+			'field-error': !this.formulario.get(field)!.valid && this.formulario.get(field)!.touched //this.formulario.get(field) retorna uma instancia do campo correspondente do formulário criado lá no ngOnInit() - has-error é a classe do Bootstrap que vai ser aplicada no elemento caso o campo não esteja válido (caso não tenha passado com sucesso pelos Validators) e tenha sido tocado (touched)
 		}
 	}
 	/* fim do script para aplicar css de erro nos campos do formulário */
@@ -83,12 +85,14 @@ export class NewAccountComponent implements OnInit {
 	/* script para buscar as informações do CEP na api do viaCep e popular os campos de endereço do formulário */
 	//consultaCEP é ativado quando ocorre o blur da input de cep do formulário
 	consultaCEP() {
-		const cep = this.formulario.get('address.cep')!.value;
+		//ao emitir um evento de mudança de status do campo cep (quando ele for alterado), o programa executa as funções do pipe. O pipe retorna um observable (ele é um observable); o programa detecta essas mudanças por meio do subscribe (o subscribe, nesse caso, fica monitorando os eventos emitidos pelo pipe() que, por sua vez, monitora os eventos emitidos pelo statusChanges)
+		const cep = this.formulario.get('address.cep')
 
-		if (cep != null && cep !== '') {
-			this.cepService.consultaCep(cep)
-				.subscribe(data => this.populateDataForm(data));
-		}
+		cep!.statusChanges.pipe( 	//statusChanges é um observable que emite um evento sempre que o status dos validators do campo/controle cep forem alterados, nesse caso, o status muda a cada valor digitado na input, ele vai ficar sempre mudando de INVALID para INVALID até o penultimo digito do cep, quando digitar o ultimo, ele muda para VALID
+			distinctUntilChanged(), //essa função só faz rodar a linha de baixo quando o status for modificado, nesse caso, como o CEP precisa ter 8 digitos para ser válido (isso foi definido no validator) ele vai imprimir o status inválido, inicialmente e, só após digitar o oitavo digito, ele vai imprimir na tela de novo o novo status de 'válido'. Sem essa função o programa ficaria imprimindo inválido a cada digito que eu colocasse do cep (até o 7º digito, depois imprimiria 'valido')
+			switchMap(status => status === 'VALID'? this.cepService.consultaCep(cep!.value) : of({}))  //o método consultaCep() retorna um observable (que é a chamada http lá do viaCep) - of({}) é um observable que emite os argumentos passados para ele e completa sem erros; como, nesse caso, não estou passando argumentos, ele envia um observable vazio, isso porque o operador switchMap() precisa que sejam retornados observables
+		)
+		.subscribe(dados => dados ? this.populateDataForm(dados) : {});
 	}
 
 	populateDataForm(data: any) {

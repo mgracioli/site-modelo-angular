@@ -17,18 +17,16 @@
                 <div class="form-group" [ngClass]="applyCssFieldError('username')">
                     <!-- aplicaSccErro() retorna a classe 'has-error' do bootstrap que será aplicada a esse elemento caso esse campo não passe com sucesso pelos Validators -->
                     <label for="username" class="control-label">Username</label>
-                    <div>
-                        <input type="text" class="form-control" formControlName="username" id="username">
-                        <!-- <span class="glyphicon glyphicon-remove"></span> -->
-                    </div>
+                    <input type="text" class="form-control" formControlName="username" id="username">
+                    <!-- <span class="glyphicon glyphicon-remove"></span> -->
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" [ngClass]="applyCssFieldError('email')">
                     <label for="email">E-mail</label>
                     <input type="email" class="form-control" formControlName="email" id="email">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" [ngClass]="applyCssFieldError('password')">
                     <label for="password" class="control-label">Password</label>
                     <input type="password" class="form-control" formControlName="password" id="password">
 
@@ -37,7 +35,7 @@
 
                 <div class="address" formGroupName="address">
                     <div class="grid-template-columns-2">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="applyCssFieldError('address.cep')">
                             <label for="cep" class="control-label">CEP</label>
                             <input type="text" class="form-control" formControlName="cep" (blur)="consultaCEP()" id="cep">
                         </div>
@@ -79,8 +77,9 @@
                 <button type="submit" class="btn-create-account">Create Account</button>
             </form>
 
-            <p class="terms-of-use-link">By creating an account, you agree to Brand's <a routerLink='#'>Terms of
-                    Use</a>.
+            <p class="terms-of-use-link">
+                By creating an account, you agree to Brand's 
+                <a routerLink='#'>Terms of Use</a>.
                 Please check our website <a routerLink='#'>Cookies Policy</a>.
             </p>
 
