@@ -1,0 +1,31 @@
+$white: #fff;
+$dark-grey: #242424;
+
+div{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
+}
+
+.not-found-container{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.brand-name{
+    font-size: 4em; //3em = 30px
+    font-weight: 700;
+    color: $dark-grey;
+    text-decoration: none;
+}
+
+.brand-logo img{
+    width: 30px;
+    height: 30px;
+}
+
+.msg-not-found{
+    font-size: 2em;
+    margin: 0;
+}

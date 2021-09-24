@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './features/home/home.component';
-import { AuthGuardService } from './shared/guards/auth-guard.service';
 
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { HomeComponent } from './features/home/home.component';
+import { MasterComponent } from './features/master/master.component';
+import { AuthGuardService } from './shared/guards/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -12,11 +14,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'products',
-    loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule),
+    component: MasterComponent, //o MasterComponent contém a navbar e o footer, portanto, as rotas filhas serão carregadas dentro desse componente e vão ter a navbar e o footer; as rotas que não forem filhas não carregarão a navbar e o footer
+    children:[
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'products',
+        loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule),
+      },
+    ]
   },
   { 
     path: 'users', 
@@ -27,13 +35,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule),
   },
-  
-
-  /* path: '**' é o caminho para rotas nao econtradas, quando o usuário digita uma rota que não existe ele é direcionado para essa página, que é a de erro 404 */
-  // {
-  //   path: '**',
-  //   component: PaginaNaoEncontradaComponent
-  // }
+  {
+    /* path: '**' é o caminho para rotas nao econtradas, quando o usuário digita uma rota que não existe ele é direcionado para essa página, que é a de erro 404 */
+    path: '**',
+    component: PageNotFoundComponent
+  }
 
 ];
 

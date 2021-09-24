@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+
+<!-- esse router-outlet é necessário pois esse template (master.component.html) é uma Master Page. Esse router-outlet é para carregar as rotas filhas dentro desse template, ou seja, as rotas que forem filhas de MasterComponent vão carregar a navbar e o footer, as que não forem, não vão carregar (olhar quais são as rotas filhas lá no app-routing.module.ts) -->
+<router-outlet></router-outlet> 
+
+<app-footer></app-footer>
+

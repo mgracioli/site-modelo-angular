@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './features/home/home.component';
+import { MasterComponent } from './features/master/master.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    MasterComponent,
   ],
   imports: [
     //Não é necessário importar nenhum módulo que for carregado por lazy loading, de fato, não faz sentido carregar aqui módulos do lazy loading pois, tudo o que é importado aqui no app.module é baixado automaticamente no momento em que a página inicial do site é carregada

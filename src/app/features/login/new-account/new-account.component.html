@@ -1,4 +1,4 @@
-<div class="create-account-container">
+<div class="create-account-container container-fluid">
     <div class="row text-center">
         <a class="login-brand-name col-sm-12" routerLinkActive="active" routerLink="">
             BRAND.com.br
@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <div class="create-account-data container col-sm-8 col-md-6 col-lg-4">
+        <div class="create-account-data container col-sm-8 col-md-6">
             <h2>
                 Create Account
             </h2>
@@ -14,8 +14,8 @@
             <!--formGroupName="endereco" é o grupo maior que engloba os campos de cep, numero, complemento, bairro, cidade e estado, assim como foi feito lá no .ts-->
             <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <!-- [formGroup] é o que vai vincular a minha variavel formulario lá do .ts com esse formulario aqui - o (ngSubmit) fica ouvindo um evento de submit, que é disparado ao clicar no botão de criar conta -->
-                <div class="form-group" [ngClass]="applyCssFieldError('username')">
-                    <!-- aplicaSccErro() retorna a classe 'has-error' do bootstrap que será aplicada a esse elemento caso esse campo não passe com sucesso pelos Validators -->
+                <div class="form-group" [ngClass]="applyCssFieldError('username')"> <!-- aplicaSccErro() retorna a classe 'has-error' do bootstrap que será aplicada a esse elemento caso esse campo não passe com sucesso pelos Validators -->
+                    
                     <label for="username" class="control-label">Username</label>
                     <input type="text" class="form-control" formControlName="username" id="username">
                     <!-- <span class="glyphicon glyphicon-remove"></span> -->
@@ -37,12 +37,16 @@
                     <div class="grid-template-columns-2">
                         <div class="form-group" [ngClass]="applyCssFieldError('address.cep')">
                             <label for="cep" class="control-label">CEP</label>
-                            <input type="text" class="form-control" formControlName="cep" (blur)="consultaCEP()" id="cep">
+                            <input type="text" class="form-control" formControlName="cep" (blur)="findCEP()" id="cep">
                         </div>
 
                         <div class="form-group">
                             <label for="state" class="control-label">State</label>
-                            <input type="text" class="form-control" formControlName="state" id="state">
+                            
+                            <select class="form-control" formControlName="state" id="state">
+                                <!-- Sempre que estiver lidando com dados vindos de observables, é sempre melhor utilizar o pipe async aqui no template do que fazer o subscribe do observable no componente (.ts) para evitar memory leaks -->
+                                <option *ngFor="let state of states$ | async" [value]="state.abbreviation">{{ state.name }}</option>
+                            </select>
                         </div>
                     </div>
                     

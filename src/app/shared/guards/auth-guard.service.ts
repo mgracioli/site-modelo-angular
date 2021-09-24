@@ -2,6 +2,7 @@ import { Route } from '@angular/compiler/src/core';
 import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
 import { AuthService } from '../services/auth-service/auth.service';
 
 /* GUARDA DE ROTAS - VERIFICA SE O USUÁRIO ESTÁ LOGADO E, CONSEQUENTEMENTE, SE PODE, OU NÃO, ACESSAR UMA ROTA */

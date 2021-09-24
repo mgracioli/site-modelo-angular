@@ -1,7 +1,2 @@
-<app-navbar></app-navbar>
-
-<div class="outlet-container">
-    <router-outlet></router-outlet>
-</div>
-
-<app-footer></app-footer>
+<!-- eu nao posso usar o app.component como uma Masterpage porque tudo o que estiver aqui no template será carregado em todas as rotas, independente se forem rotas filhas de app.component ou não, por isso eu criei o master.component -->
+<router-outlet></router-outlet>
