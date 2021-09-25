@@ -5,14 +5,14 @@ import { ProductsComponent } from '../features/products/products.component';
 
 // PELA NAVBAR O CARREGAMENTO NAO ESTÁ SENDO FEITO POR LAZY LOADING??
 const routes: Routes = [
-  {
-    path: '', 
-    component: HomeComponent
-  },
-  {
-    path: 'products',
-    component: ProductsComponent
-  }
+  // {
+  //   path: '', 
+  //   component: HomeComponent
+  // },
+  // {
+  //   path: 'products',
+  //   component: ProductsComponent
+  // }
 
 ];
 

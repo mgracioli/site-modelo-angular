@@ -16,13 +16,11 @@ import { GetCepService } from 'src/app/shared/services/cep-services/get-cep.serv
   imports: [
     CommonModule,
     LoginRoutingModule,
-    FormsModule,
+    FormsModule,  //mudar esse template form para reactive form - tem que fazer as devidas alterações no template!!!!! 
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule, //esse modulo é necessario por conta do new-account.ts, lá eu uso uma injeção de dependência desse módulo, por isso precisa importar aqui
   ],
-  providers: [
-    //GetCepService
-  ]
+  providers: []
 })
 export class LoginModule { }
