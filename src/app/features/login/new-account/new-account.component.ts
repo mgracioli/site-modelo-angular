@@ -79,7 +79,7 @@ export class NewAccountComponent implements OnInit {
 		Object.keys(formGroup.controls).forEach(field => {
 			const control = formGroup.get(field)
 
-			//marca o campo como Touched pois, assim, ele ativa a validação do campo (por conta do (ngClass)="applyCssFieldError()" aplicado nos campos (no caso, eu só apliquei o ngClass na input de name porque eu ainda não consegui fazer essa validação funcionar))  
+			//marca o campo como Touched pois, assim, ele ativa a validação do campo (por conta do (ngClass)="applyCssFieldError()" aplicado nos campos  
 			control?.markAsTouched()
 
 			//se o controle passado for um formGroup (como, por exemplo, o "address"), chama essa função de forma recursiva para marcar os campos aninhados como touched também

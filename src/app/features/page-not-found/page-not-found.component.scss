@@ -13,16 +13,17 @@ div{
     transform: translate(-50%, -50%);
 }
 
-.brand-name{
+.brand-name-logo{
     font-size: 4em; //3em = 30px
     font-weight: 700;
     color: $dark-grey;
     text-decoration: none;
+    height: 70px;
 }
 
-.brand-logo img{
-    width: 30px;
-    height: 30px;
+.brand-name-logo img{
+    height: 55%;
+    margin-bottom: 10px;
 }
 
 .msg-not-found{

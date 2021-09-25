@@ -2,19 +2,26 @@
 $white: white;
 $dark-grey: #242424;
 
-nav{
+*{
+    margin: 0px;
+    padding: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
 }
 
-/*as classes estão com nome nav-x para não dar conflito com as classes do bootstrap*/
+
+/*as classes estão com nome navb-* para não dar conflito com as classes do bootstrap*/
 
 .navb{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    background-color: $dark-grey;
 }
 
 .progress-bar{
@@ -34,43 +41,33 @@ nav{
 .navb-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: $dark-grey;
-    box-sizing: border-box;
-    height: 60px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
 }
 
 .navb-brand{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 20%;
-    height: 100%;
-}
-
-.navb-brand-name{
     font-size: 3em; //3em = 30px
     font-weight: 700;
     color: $white;
     text-decoration: none;
+    height: 60px;
 }
 
-.navb-brand-logo img{
-    width: 30px;
-    height: 30px;
+.navb-brand img{
+    height: 60%;
 }
 
 .navb-menus{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    width: 45%;
-    height: 100%;
-    padding: 0;    //por algum motivo, existe um padding e uma margem na navbar-menus, por isso tive que colocar esse 0
+    text-align: center;
+    height: 60px;
     margin: 0;
 }
 
 .navb-menu{
-    width: 100%;
     height: 100%;
     transition: all 0.2s ease-in-out;
     position: relative;
@@ -79,15 +76,15 @@ nav{
 
 .navb-item{
     text-decoration: none;
-    position: absolute;
-    right: 20px;
+    position:absolute;
+    right: 0px;
     font-size: 2em; //2em = 20px
     color: $white;
     text-decoration: none;
     border: 5px solid $dark-grey;
-    box-sizing: border-box; //border box para o item ficar dentro da navbar-menus e da navbar-container
     line-height: 50px;  //centraliza o texto na vertical
     transition: border 0.4s linear;
+    height: 100%;
 }
 
 .navb-item:hover{
@@ -96,7 +93,6 @@ nav{
 
 /* Configurações do menu hamburguer*/
 .navb-hamburguer{
-    width: 15%;
     height: inherit;
     display: none;
     align-items: center;
@@ -172,29 +168,24 @@ nav{
 }
 /* fim das configurações do menu hamburguer*/
 
-@media only screen and (max-width: 500px){
+/*Configuração para dispositivos extra small*/
+@media only screen and (max-width: 575px){
     #hamburguer-check-box:checked ~ .navb-brand{
         visibility: hidden; //hidden para que essa parte da navbar nao fique ativa por trás da navbar-menus
         transition: 0.3s;
     }
 
-    .navb-container{
-        justify-content: space-evenly;
-    }
-
     .navb-menus{
         display: none;
-        //opacity: 0;
-        //visibility: hidden;
     }
     
     //mostra a navbar vertical
     #hamburguer-check-box:checked ~ .navb-menus{
-        //opacity: 1;
-        //visibility: visible;
         display: flex; 
         flex-direction: column;
         justify-content: flex-start;
+        //align-items: center;
+        padding: 0;
         position: absolute;
         top: 60px;
         width: 100%;
@@ -204,12 +195,10 @@ nav{
         transition: 0.25s cubic-bezier(0, 1.05, 0, 1.20) 1s;
     }
 
-    // ul{
-    //     transition: 0.25s cubic-bezier(0, 1.05, 0, 1.20) 1s;
-    // }
-
     .navb-menu{
-        height: 25%;
+        position: relative;
+        width: 100vw;
+        height: 20%;
     }
 
     .navb-menu:hover{
@@ -217,11 +206,14 @@ nav{
     }
 
     .navb-item{
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: absolute;
+        //top: 50%;
+        //left: 50%;
+        //transform: translate(-50%, -50%);
         text-align: center;
+        width: 100%;
         border: 0;
+        height: 50%;
     }
 
     .navb-item:hover{
@@ -230,16 +222,6 @@ nav{
 
     .navb-hamburguer{
         display: flex;
-    }
-}
-
-@media only screen and (max-width: 700px){
-    .navb-brand{
-        width: 35%;
-    }
-
-    .navb-menus{
-        width: 65%;
     }
 }
 

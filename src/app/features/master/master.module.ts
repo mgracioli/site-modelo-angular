@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    CoreModule,
-    RouterModule  //importa RouterModule para poder usar o <router-outlet> no template
+    CoreModule, //necessário para usar a navbar e o footer
+    RouterModule  //necessário para poder usar o <router-outlet> no template
   ],
   exports: [
     MasterComponent

@@ -1,24 +1,24 @@
-<nav class='navb'>
+<!-- <nav class='navb'>
     <div class='navb-container'>  
         <input id="hamburguer-check-box" type="checkbox">   <!-- essa input serve para verificar quando o menu hamburguer for clicado, precisa fica aqui antes de tudo pois ela só consegue pegar elementos que estão depois dela -->
 
-        <div class="navb-brand">
+        <!-- <div class="navb-brand">
             <a class="navb-brand-name" routerLinkActive="active" routerLink="">
                 BRAND   
             </a>
             <a class="navb-brand-logo" routerLinkActive="active" routerLink="">
                 <img src="assets/brand-logo.png">
             </a>
-        </div>
+        </div> -->
 
-        <ul class="navb-menus">
+        <!-- <ul class="navb-menus">
             <li class="navb-menu">
                 <a class="navb-item" routerLinkActive="active" routerLink="/">
                     Home
                 </a>
-            </li>
+            </li> -->
 
-            <li class="navb-menu">
+            <!-- <li class="navb-menu">
                 <a class="navb-item" routerLinkActive="active" routerLink="services">
                     Services
                 </a>
@@ -28,10 +28,53 @@
                 <a class="navb-item" routerLinkActive="active" routerLink="products">
                     Products
                 </a>
-            </li>
-        </ul>
+            </li> -->
+        <!-- </ul>
         
         <div class="navb-hamburguer">
+            <label for="hamburguer-check-box">  <!--o for faz referência ao id da checkbox-->
+                <!-- <div class="menu-hamburguer">
+                    <span class="hamburguer"></span>
+                </div>
+            </label>
+        </div>  
+    </div> -->
+
+    <!-- <div class="progress-bar">
+        <div class="progress-bar-inner"></div>
+    </div> -->
+<!-- </nav>  -->
+
+<nav class='navb container-fluid'>
+    <div class='row navb-container container-fluid'>  
+        <input id="hamburguer-check-box" type="checkbox">   <!-- essa input serve para verificar quando o menu hamburguer for clicado, precisa fica aqui antes de tudo pois ela só consegue pegar elementos que estão depois dela -->
+
+        <a class="navb-brand col-7 col-sm-4" routerLink="">
+            BRAND   
+            <img src="assets/brand-logo.png">
+        </a>
+
+        <ul class="navb-menus col-12 col-sm-8">
+            <li class="navb-menu col-sm-4 col-md-3 col-lg-2">
+                <a class="navb-item" routerLinkActive="active" routerLink="/">
+                    Home
+                </a>
+            </li>
+
+            <li class="navb-menu col-sm-4 col-md-3 col-lg-2">
+                <a class="navb-item" routerLinkActive="active" routerLink="services">
+                    Services
+                </a>
+            </li>
+
+            <li class="navb-menu col-sm-4 col-md-3 col-lg-2">
+                <a class="navb-item" routerLinkActive="active" routerLink="products">
+                    Products
+                </a>
+            </li>
+        </ul>
+                
+        <div class="navb-hamburguer col-4">
             <label for="hamburguer-check-box">  <!--o for faz referência ao id da checkbox-->
                 <div class="menu-hamburguer">
                     <span class="hamburguer"></span>
@@ -43,5 +86,5 @@
     <div class="progress-bar">
         <div class="progress-bar-inner"></div>
     </div>
-</nav>   
+</nav> 
 
