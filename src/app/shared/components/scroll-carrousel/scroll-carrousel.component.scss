@@ -1,0 +1,58 @@
+$white: #fff;
+$dark-grey: #242424;
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.carousel-container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
+    position: relative;
+}
+
+.carousel-list{
+    //padding: 0px 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    //justify-content: space-evenly;
+    height: 250px;
+    width: 90%;
+    border: 1px solid red;
+}
+
+.carousel-card{
+    border: 1px solid black;
+    border-radius: 7px;
+    //width: 20%;
+    margin-right: 10px;
+}
+
+.card-content img{
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.card-content div{
+    width: 100%;
+    height: 50%;
+}
+
+.card-caption{
+    font-size: 1.6em;
+    color: $dark-grey;
+}
+
+.card-caption span{
+    display: block;
+    
+}
+
+//NAO ESTA FUNCIONANDO?
+.card-caption + span{
+    font-weight: 700;
+    color: rgb(86, 86, 145);
+}
