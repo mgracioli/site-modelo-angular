@@ -15,24 +15,32 @@ $dark-grey: #242424;
     justify-content: center;
 }
 
+.carousel-frame{
+    height: 225px;
+    width: 90%;
+    overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
+    position: relative;
+}
+
+.carousel-frame:hover{
+    overflow: visible;  //mostra todos os produtos e não interfere no "transform: scale()" do card
+}
+
 .carousel-list{
     display: flex;
     flex-wrap: nowrap;  //não deixa os itens da lista que ultrapassarem o espaço da div quebrarem linha
-    overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
-    height: 250px;
-    width: 90%;
+    width: auto;    //auto porque essa div tem que ter a largura ajustável de acordo com a quantidade de cards dentro dela, assim, eu posso pegar essa largura lá no javascript para definir em que momento os botões de scroll devem parar de funcionar
     transition: overflow 1s ease-in-out;
-}
-
-.carousel-list:hover{
-    overflow: visible;  //mostra todos os produtos e não interfere no "transform: scale()" do card
-}
+    transition: left 0.5s ease-in-out;
+    position: absolute;
+}   
 
 .carousel-card{
     background-color: white;
     border: 1px solid #dfe1e5;
     border-radius: 7px;
     width: 128px;
+    height: 225px;
     margin-right: 10px;
     transition: all 0.1s ease-out;
     padding: 3px;   //padding para a imagem não se sobrepor à borda do card
@@ -75,7 +83,7 @@ $dark-grey: #242424;
     color: rgb(86, 86, 145);
 }
 
-.btn-scroll-carousel{
+.btn-scroll-card{
     background-color: white;
     border-radius: 50%;
     border: 1px solid #dfe1e5;
@@ -83,23 +91,37 @@ $dark-grey: #242424;
     height: 55px;
     position: absolute;
     top: 50%;
-    right: 21px;
-    transform: translateY(-50%);   
+    transform: translateY(-50%);
     box-shadow: 1px 3px 6px #8e8e8eda; 
     z-index: 1;
     transition: color 0.5s ease-in-out;
 }
 
-.btn-scroll-carousel::after{
+.btn-scroll-card.to-left{   
+    right: 21px; 
+}
+
+.btn-scroll-card.to-right{
+    left: 21px;
+}
+
+.btn-scroll-card::after{
+    font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
-    content: ">";
+    transform: translate(-50%, -50%); 
     font-size: 25px;
     font-weight: 600;
     color: rgb(110, 110, 110);
+}
+
+.btn-scroll-card.to-left::after{
+    content: ">";
+}
+
+.btn-scroll-card.to-right::after{
+    content: "<";
 }
 
 //NAO ESTA FUNCIONANDO?
