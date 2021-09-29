@@ -16,10 +16,11 @@ $dark-grey: #242424;
 }
 
 .carousel-frame{
-    height: 225px;
-    width: 90%;
-    overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
     position: relative;
+    height: 225px;
+    width: 95vw;
+    overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
+    //background-color: red;
 }
 
 .carousel-frame:hover{
@@ -27,12 +28,12 @@ $dark-grey: #242424;
 }
 
 .carousel-list{
+    position: absolute; //precisa ter essa propriedade para o funcionamento dos botões
     display: flex;
     flex-wrap: nowrap;  //não deixa os itens da lista que ultrapassarem o espaço da div quebrarem linha
-    width: auto;    //auto porque essa div tem que ter a largura ajustável de acordo com a quantidade de cards dentro dela, assim, eu posso pegar essa largura lá no javascript para definir em que momento os botões de scroll devem parar de funcionar
-    transition: overflow 1s ease-in-out;
-    transition: left 0.5s ease-in-out;
-    position: absolute;
+    width: auto;    //auto porque essa div tem que ter a largura ajustável de acordo com a quantidade de cards dentro dela
+    transition: left 0.4s ease-in-out;   
+    //background-color: blue;
 }   
 
 .carousel-card{
@@ -77,10 +78,13 @@ $dark-grey: #242424;
     display: block;
 }
 
-//NAO ESTA FUNCIONANDO?
-.card-caption + span{
+.card-caption span:first-child{
+    color: #1a0dab;
+}
+
+.card-caption span:nth-child(2){
     font-weight: 700;
-    color: rgb(86, 86, 145);
+    color: #316938;
 }
 
 .btn-scroll-card{
@@ -98,11 +102,11 @@ $dark-grey: #242424;
 }
 
 .btn-scroll-card.to-left{   
-    right: 21px; 
+    right: 10px; 
 }
 
 .btn-scroll-card.to-right{
-    left: 21px;
+    left: 10px;
 }
 
 .btn-scroll-card::after{
@@ -125,6 +129,6 @@ $dark-grey: #242424;
 }
 
 //NAO ESTA FUNCIONANDO?
-.btn-scroll-carousel:hover::after{
+.btn-scroll-card:hover::after{
     color: $dark-grey;
 }
