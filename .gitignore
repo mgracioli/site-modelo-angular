@@ -43,3 +43,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#o comando abaixo foi inserido após ter sido criado o servidor
+# Node
+/server/node_modules

@@ -1,13 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { HomeComponent } from './features/home/home.component';
 import { HomeModule } from './features/home/home.module';
-import { MasterComponent } from './features/master/master.component';
 import { MasterModule } from './features/master/master.module';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 
@@ -25,10 +23,11 @@ import { PageNotFoundComponent } from './features/page-not-found/page-not-found.
     //FormsModule,  //o FormsModule é usado quando se trabalha com Template driven Forms (que são os formulários onde o template é manipulado no próprio template (aplicação de validações, por exemplo), geralmente usando a diretiva [(ngModel)] e as variáveis html do tipo <input #variavel>
     ReactiveFormsModule, //o ReactiveFormsModule é usado quando se trabalha com Reactive/Model driven forms (que são os formulários no qual o template é manipulado por typescript) - nesse projeto eu estou usando esse tipo de formulário
     MasterModule,
-    HomeModule  //HomeModule é importado aqui pois eu precisei fazer ele virar um módulo para poder usar o scroll-top-button lá no template dele
+    HomeModule,  //HomeModule é importado aqui pois eu precisei fazer ele virar um módulo para poder usar o scroll-top-button lá no template dele
+    HttpClientModule  //esse import é necessário para o funcionamento do servidor
   ],
   providers: [
-    
+  
   ],
   bootstrap: [AppComponent]
 })
