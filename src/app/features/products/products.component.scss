@@ -12,21 +12,40 @@ $dark-grey: #242424;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
 }
 
-// .products-search-bar{
-//     height: 90vh;
-//     border: 1px solid red;
-// }
-
-.products-content{
-    display: grid;
-    grid-template-columns: repeat(6 50px);
-    grid-gap: 10px;
-    //width: 100%;
-    //height: 500px;
-    border: 1px solid #000;
+.top-advertising-container{  
+    height: 150px;
+    position: relative;   
 }
 
-.product{
-    width: 50px;
-    border: 1px solid red;
+.top-advertising{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d5458b;
+    height: 80px;
+    padding-top: 22px;
+}
+
+.top-advertising h1{
+    font-size: 3em;
+    color: $white;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 3.5s steps(35, end) infinite,
+        blink-animation 0.5s step-end infinite;
+}
+
+@keyframes typing{
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-animation{
+    from, to { border-color: transparent }
+    50% { border-color: #00D8FF; }
 }

@@ -20,7 +20,6 @@ $dark-grey: #242424;
     height: 225px;
     width: 95vw;
     overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
-    //background-color: red;
 }
 
 .carousel-frame:hover{
@@ -33,7 +32,6 @@ $dark-grey: #242424;
     flex-wrap: nowrap;  //não deixa os itens da lista que ultrapassarem o espaço da div quebrarem linha
     width: auto;    //auto porque essa div tem que ter a largura ajustável de acordo com a quantidade de cards dentro dela
     transition: left 0.4s ease-in-out;   
-    //background-color: blue;
 }   
 
 .carousel-card{
@@ -63,28 +61,53 @@ $dark-grey: #242424;
     object-fit: contain;
 }
 
-.card-content div{
+.card-caption{
     width: 100%;
     height: 50%;
-}
-
-.card-caption{
-    font-size: 1.6em;
-    color: $dark-grey;
+    margin: auto auto;
+    font-size: 1.5em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-caption span{
-    display: block;
+    //tudo isso é para aparecer as reticências de acordo com o overflow das linhas
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    width: 100%; /* Define o tamanho máximo do nosso container*/
 }
 
-.card-caption span:first-child{
+.product-name{
+    height: 56%;
     color: #1a0dab;
+    overflow: hidden;  
+    line-height: 1.4;
+    -webkit-line-clamp: 3; /* Define quantas linhas para aparecer as reticencias */
 }
 
-.card-caption span:nth-child(2){
+.product-price{
+    height: 22%;
     font-weight: 700;
     color: #316938;
+    padding-top: 4px;
+}
+
+.product-store-name{
+    color: $dark-grey;
+    height: 22%;
+    -webkit-line-clamp: 1; /* Define quantas linhas queremos */
+}
+
+.carousel-card:hover .card-caption{
+   font-size: 1.3em;
+}
+
+.carousel-card:hover .product-name{
+    line-height: 1.2;
+    -webkit-line-clamp: 4; /* Define quantas linhas para aparecer as reticencias */
 }
 
 .btn-scroll-card{
