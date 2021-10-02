@@ -64,12 +64,8 @@ $dark-grey: #242424;
 .card-caption{
     width: 100%;
     height: 50%;
-    margin: auto auto;
     font-size: 1.5em;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .card-caption span{
@@ -96,6 +92,7 @@ $dark-grey: #242424;
 }
 
 .product-store-name{
+    font-size: 1em;
     color: $dark-grey;
     height: 22%;
     -webkit-line-clamp: 1; /* Define quantas linhas queremos */
@@ -151,7 +148,6 @@ $dark-grey: #242424;
     content: "<";
 }
 
-//NAO ESTA FUNCIONANDO?
 .btn-scroll-card:hover::after{
     color: $dark-grey;
 }

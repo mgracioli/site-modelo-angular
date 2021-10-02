@@ -24,11 +24,11 @@ $dark-grey: #242424;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #d5458b;
-    height: 80px;
-    padding-top: 22px;
+    height: 80px;    
 }
 
 .top-advertising h1{
+    line-height: 80px;  //alinha o texto verticalmente (o line-heigth tem q ser do mesmo tamanho do heigth do elemento pai)
     font-size: 3em;
     color: $white;
     overflow: hidden;
@@ -41,11 +41,17 @@ $dark-grey: #242424;
 }
 
 @keyframes typing{
-    from { width: 0 }
-    to { width: 100% }
+    from { width: 0 }   //from = 0%
+    to { width: 100% }  //to = 100%
 }
 
 @keyframes blink-animation{
     from, to { border-color: transparent }
     50% { border-color: #00D8FF; }
+}
+
+@media only screen and (max-width: 575px){
+    .top-advertising h1{
+        font-size: 2em;
+    }
 }

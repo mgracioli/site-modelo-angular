@@ -26,9 +26,7 @@ import { PageNotFoundComponent } from './features/page-not-found/page-not-found.
     HomeModule,  //HomeModule é importado aqui pois eu precisei fazer ele virar um módulo para poder usar o scroll-top-button lá no template dele
     HttpClientModule  //esse import é necessário para o funcionamento do servidor
   ],
-  providers: [
-  
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

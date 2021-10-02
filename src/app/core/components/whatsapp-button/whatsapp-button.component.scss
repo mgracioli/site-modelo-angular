@@ -1,0 +1,24 @@
+
+.whatsapp-container{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;}
+
+.whatsapp-container img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    position: relative;
+}
+
+.whatsapp-container img:hover{
+    animation: shake 1.5s infinite;
+}
+
+@keyframes shake{
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    25% { transform: translate(0px, 0px) rotate(0deg); }
+    50% { transform: translate(-1px, -1px) rotate(-10deg); }
+    75% { transform: translate(2px, 2px) rotate(20deg); }
+    100% { transform: translate(-1px, -1px) rotate(-10px); }
+}
