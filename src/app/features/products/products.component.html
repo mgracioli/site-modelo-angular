@@ -1,26 +1,143 @@
 <div class="products-container container-fluid">
+    
+    <section class="search-bar-container row">
+        <div class="search-bar row align-content-center justify-content-center">
+            <div class="search col-6 col-sm-5 col-md-5">
+                <div class="search-border row justify-content-center">
+                    <input class="search-input col-10 col-md-11">
+                
+                    <button class="search-btn col-2 col-md-1" type="submit">
+                        <img src="search-icon.png">
+                    </button>
+                </div>
+                
+            </div>
+        </div>    
         
-    <div class="top-advertising-container row">
+        <div class="categories-menu-bar row">
+            <div class="categories col-12 col-md-8 col-lg-6">
+                <div class="dropdown-category col-2">
+                    <div class="category-btn" type="button" id="">
+                        Electronics <i class="bi bi-caret-down"></i>
+                    </div>
+                
+                    <div class="dropdown-menu">
+                        <a class="" href="#">Action</a>
+                        <a class="" href="#">Another action</a>
+                        <a class="" href="#">Something else here</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-category col-2">
+                    <div class="category-btn" type="button" id="">
+                        Homeware
+                    </div>
+                
+                    <div class="dropdown-menu">
+                        <a class="" href="#">Action</a>
+                        <a class="" href="#">Another action</a>
+                        <a class="" href="#">Something else here</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-category col-2">
+                    <div class="category-btn" type="button" id="">
+                        Arts & Crafts
+                    </div>
+                
+                    <div class="dropdown-menu" >
+                        <a class="" href="#">Action</a>
+                        <a class="" href="#">Another action</a>
+                        <a class="" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categories-menu-right col-md-4 col-lg-6">
+                <div class="categories-menu-text" type="button">
+                    <span>
+                        Get to know our <b>Electronics session</b>
+                    </span>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!-- <div class="categories-menu row">
+            <div class="dropdown col-sm-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+            
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+
+            <div class="dropdown col-sm-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+            
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="category-drop-down dropdown-menu">
+                <button class="drop-down-item" type="button">Category1</button>
+            </div>
+
+            <div class="category-drop-down dropdown-menu">
+                <a class="drop-down-item">Category1</a>
+                <a class="drop-down-item">Category2</a>
+                <a class="drop-down-item">Category3</a>
+            </div>
+
+            <div class="category-drop-down dropdown-menu">
+                <a class="drop-down-item">Category1</a>
+                <a class="drop-down-item">Category2</a>
+            </div>
+
+            <div class="category-drop-down dropdown-menu">
+                <a class="drop-down-item">Category1</a>
+                <a class="drop-down-item">Category2</a>
+                <a class="drop-down-item">Category3</a>
+                <a class="drop-down-item">Category4</a>
+            </div>
+
+            <div class="category-drop-down dropdown-menu">
+                <a class="drop-down-item">Category1</a>
+            </div> -->
+    </section>
+
+    <section class="top-advertising-container row">
         <div class="top-advertising">
             <h1>Check out our best products</h1>
         </div>
-    </div>
+    </section>
 
-    <app-scroll-carrousel class="products-carousel"></app-scroll-carrousel>
+    <section class="carousel-of-products-container row">
+        <div class="carousel-products">
+            <app-scroll-carrousel></app-scroll-carrousel>
+        </div>
+    </section>
     
-    <div class="row">
-
-    </div>
     
-    <div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
+    <section class=" container-com-cards-amazon row">
+        <div class="card1"></div>
+        <div class="card2"></div>
+        <div class="card3"></div>
+    </section>
     
+        
     <button class="btn btn-success" (click)="downloadMenu()">Download PDF</button>
 
     <app-whatsapp-button></app-whatsapp-button>

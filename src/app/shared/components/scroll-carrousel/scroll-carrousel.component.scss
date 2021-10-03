@@ -11,27 +11,38 @@ $dark-grey: #242424;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
     position: relative;
+    width: 100%;
+    height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .carousel-frame{
-    position: relative;
-    height: 225px;
-    width: 95vw;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    height: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
     overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
+    //padding: 0 30px;
+    //background-color: rebeccapurple;
 }
 
-.carousel-frame:hover{
-    overflow: visible;  //mostra todos os produtos e não interfere no "transform: scale()" do card
-}
+// .carousel-frame:hover{
+//     overflow-y: visible;  //mostra todos os produtos e não interfere no "transform: scale()" do card
+// }
 
 .carousel-list{
+    margin-left: 25px;
     position: absolute; //precisa ter essa propriedade para o funcionamento dos botões
     display: flex;
     flex-wrap: nowrap;  //não deixa os itens da lista que ultrapassarem o espaço da div quebrarem linha
-    width: auto;    //auto porque essa div tem que ter a largura ajustável de acordo com a quantidade de cards dentro dela
-    transition: left 0.4s ease-in-out;   
+    width:fit-content;    //fit-content porque essa div tem que ter a largura ajustável de acordo com a quantidade de cards dentro dela
+    transition: left 0.4s ease-in-out;  
 }   
 
 .carousel-card{
@@ -85,21 +96,20 @@ $dark-grey: #242424;
 }
 
 .product-price{
-    height: 22%;
+    height: 24%;
     font-weight: 700;
     color: #316938;
     padding-top: 4px;
 }
 
 .product-store-name{
-    font-size: 1em;
     color: $dark-grey;
-    height: 22%;
+    height: 20%;
     -webkit-line-clamp: 1; /* Define quantas linhas queremos */
 }
 
-.carousel-card:hover .card-caption{
-   font-size: 1.3em;
+.carousel-card:hover .product-name, .carousel-card:hover .product-store-name{
+   font-size: 0.84em;
 }
 
 .carousel-card:hover .product-name{
@@ -119,13 +129,19 @@ $dark-grey: #242424;
     box-shadow: 1px 3px 6px #8e8e8eda; 
     z-index: 1;
     transition: color 0.5s ease-in-out;
+    transition: opacity .4s ease-out;
+    opacity: 0;
 }
 
-.btn-scroll-card.to-left{   
+.btn-scroll-card.show-btn{
+   opacity: 1;
+}
+
+.btn-scroll-card.right{ 
     right: 10px; 
 }
 
-.btn-scroll-card.to-right{
+.btn-scroll-card.left{
     left: 10px;
 }
 
@@ -140,14 +156,19 @@ $dark-grey: #242424;
     color: rgb(110, 110, 110);
 }
 
-.btn-scroll-card.to-left::after{
+.btn-scroll-card.right::after{
     content: ">";
 }
 
-.btn-scroll-card.to-right::after{
+.btn-scroll-card.left::after{
     content: "<";
 }
 
 .btn-scroll-card:hover::after{
     color: $dark-grey;
+}
+
+@keyframes fadeBtn {
+    0% {opacity:0}
+    100% {opacity:1}
 }

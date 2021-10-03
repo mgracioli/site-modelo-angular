@@ -1,5 +1,5 @@
-<div class="carousel-container container-fluid">
-    <div class="carousel-frame">
+<div class="carousel-container">
+    <div class="carousel-frame" id="carousel-frame">
         <div class="row carousel-list" id="carousel-list">
             <div *ngFor="let cardProduct of cardProducts" class="carousel-card col-2">
                 <a class="card-content" routerLinkActive="active" routerLink="/">
@@ -11,7 +11,7 @@
                         </span>
                         
                         <span class="product-price">
-                            R$ {{ cardProduct.price }}
+                            $ {{ cardProduct.price }}
                         </span>
 
                         <span class="product-store-name">
@@ -23,6 +23,6 @@
         </div>         
     </div>
     
-    <div class="btn-scroll-card to-left" (click)="moveProducts('left')" role="button"></div>
-    <div class="btn-scroll-card to-right" (click)="moveProducts('right')" role="button"></div>
+    <div class="btn-scroll-card left" (click)="moveProducts('right')" [ngClass]="{'show-btn' : showButtonLeft}" role="button"></div>
+    <div class="btn-scroll-card right" (click)="moveProducts('left')" [ngClass]="{'show-btn' : showButtonRight}" role="button"></div>
 </div>

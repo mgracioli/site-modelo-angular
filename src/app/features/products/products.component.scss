@@ -12,8 +12,115 @@ $dark-grey: #242424;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
 }
 
+.search-bar-container{
+    height: 100px;
+    position: relative;
+    background-color: #303030;
+}
+
+.search-bar{
+    height: 55%;
+}
+
+.search-input{
+    font-size: 15px;
+    line-height: 15px;
+    padding: 7px 10px 10px 0;
+    margin: 0;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    height: 36px;
+    background: 0 0;
+    color: #111;
+    background-color: $white;
+    outline: 0;
+    -webkit-appearance: none;
+    box-shadow: none;
+    text-indent: 8px;
+}
+
+.search-btn{
+    content: url('./images/search-icon.png');
+    height: 36px;
+    border-radius: 0 5px 5px 0;
+    background-color: #78d0db;
+    border: 0;
+}
+
+.search-border{
+    width: 100%;
+    border: 3px solid #303030;   //essa borda fica invisível, pelo mesmo motivo da classe .dropdown-category
+    border-radius: 8px;
+}
+
+.search-border:focus-within{
+    border-color: #41c8da;
+    background-color: #41c8da;
+}
+
+.search-btn:hover{
+    background-color: #59b6c2;
+}
+
+.search-btn img{
+    height: 55%;
+    width: 55%;
+    object-fit: contain;
+}
+
+.categories-menu-bar{
+    height: 45%;
+    background-color: #333333;
+}
+
+.categories{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.dropdown-category{
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #333333;  //essa borda é para ficar invisível mesmo, como o width está como fit-content e na hora que faz o hover surge uma borda branca ele vai redimensionar o width por causa dessa borda, daí essa borda invisivel serve para não redimensionar e o botão não ficar se mexendo
+    padding: 0 10px;
+}
+
+.dropdown-category:hover, .categories-menu-text:hover{
+    border: 1px solid $white;
+    border-radius: 2px;
+}
+
+.category-btn{
+    color: $white;
+    font-size: 1.4em;
+}
+
+.dropdown-menu{
+    display: none;
+}
+
+.categories-menu-right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: $white;
+    font-size: 1.5em;
+    line-height: 1.2em;
+}
+
+.categories-menu-text{
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #333333;   //essa borda também é para ficar invisível, assim como a da classe .dropdown-category
+    float: right;
+    padding: 0 10px;
+}
+
 .top-advertising-container{  
-    height: 150px;
+    height: 100px;
     position: relative;   
 }
 
@@ -53,5 +160,24 @@ $dark-grey: #242424;
 @media only screen and (max-width: 575px){
     .top-advertising h1{
         font-size: 2em;
+    }
+}
+
+.carousel-of-products-container{
+    height: 280px;
+    position: relative;
+}
+
+.carousel-products{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px){
+    .categories-menu-right{
+        display: none;
     }
 }
