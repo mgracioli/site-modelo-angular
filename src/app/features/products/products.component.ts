@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductsComponent implements OnInit {
 
+  shoppingCartQuantity: string = '10'
+
   constructor(private fileService: FileService) { }
 
   ngOnInit(): void {

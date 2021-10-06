@@ -17,8 +17,13 @@
             </div>
     
             <div class="form-group password">
-                <label for="password" class="control-label">Password</label><label ><a routerLinkActive="active" routerLink="/">Forgot password</a></label>
-                <input type="password" [(ngModel)]="user.password" class="form-control" id="password">
+                <label for="password" class="control-label">Password</label>
+                <label ><a routerLinkActive="active" routerLink="/">Forgot password</a></label>
+                
+                <div class="input-password-eye">
+                    <input type="password" [(ngModel)]="user.password" class="form-control" id="password">
+                    <i class="eye" [ngClass]="eye" (click)="changeEye()"></i>
+                </div>
             </div>
     
             <button type="submit" class="btn-login" (click)="login()">LOGIN</button>

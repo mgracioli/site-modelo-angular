@@ -1,16 +1,31 @@
 <div class="products-container container-fluid">
     
     <section class="search-bar-container row">
-        <div class="search-bar row align-content-center justify-content-center">
+        <div class="search-bar row justify-content-around">
             <div class="search col-6 col-sm-5 col-md-5">
                 <div class="search-border row justify-content-center">
-                    <input class="search-input col-10 col-md-11">
+                    <input class="search-input col-10 col-md-10 col-lg-11">
                 
-                    <button class="search-btn col-2 col-md-1" type="submit">
-                        <img src="search-icon.png">
+                    <button class="search-btn col-2 col-md-2 col-lg-1" type="submit">
+                        <i class="bi bi-search"></i>
                     </button>
                 </div>
-                
+            </div>
+
+            <div class="sign-in-products col-4 col-sm-3 col-md-2">
+                <a>
+                    <b>SIGN IN</b> <br>into your account
+                    <i class="bi bi-caret-down-fill"></i>
+                </a>
+            </div>
+
+            <div class="shopping-cart-container col-1">
+                <!-- <div class="shopping-cart"> -->
+                    <a class="shopping-cart">
+                        <i class="bi bi-basket3"></i>
+                        <span class="cart-quantity">{{ shoppingCartQuantity }}</span>
+                    </a>
+                <!-- </div>  -->
             </div>
         </div>    
         
@@ -18,37 +33,55 @@
             <div class="categories col-12 col-md-8 col-lg-6">
                 <div class="dropdown-category col-2">
                     <div class="category-btn" type="button" id="">
-                        Electronics <i class="bi bi-caret-down"></i>
-                    </div>
-                
-                    <div class="dropdown-menu">
-                        <a class="" href="#">Action</a>
-                        <a class="" href="#">Another action</a>
-                        <a class="" href="#">Something else here</a>
+                        Electronics <i class="bi bi-caret-down-fill"></i>
+                        
+                        <ul class="dropdown-submenu">
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Action</a>
+                            </li>
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Another action</a>
+                            </li>
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Something else here</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
     
                 <div class="dropdown-category col-2">
                     <div class="category-btn" type="button" id="">
-                        Homeware
-                    </div>
-                
-                    <div class="dropdown-menu">
-                        <a class="" href="#">Action</a>
-                        <a class="" href="#">Another action</a>
-                        <a class="" href="#">Something else here</a>
+                        Homeware <i class="bi bi-caret-down-fill"></i>
+
+                        <ul class="dropdown-submenu">
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Action</a>
+                            </li>
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Another action</a>
+                            </li>
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Something else here</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="dropdown-category col-2">
                     <div class="category-btn" type="button" id="">
-                        Arts & Crafts
-                    </div>
-                
-                    <div class="dropdown-menu" >
-                        <a class="" href="#">Action</a>
-                        <a class="" href="#">Another action</a>
-                        <a class="" href="#">Something else here</a>
+                        Arts & Crafts <i class="bi bi-caret-down-fill"></i>
+                        
+                        <ul class="dropdown-submenu">
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Action</a>
+                            </li>
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Another action</a>
+                            </li>
+                            <li class="dropdown-submenu-item">
+                                <a class="dropdown-submenu-link" href="#">Something else here</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -59,63 +92,8 @@
                         Get to know our <b>Electronics session</b>
                     </span>
                 </div>
-               
             </div>
         </div>
-    </section>
-
-    <section>
-        <!-- <div class="categories-menu row">
-            <div class="dropdown col-sm-2">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                </button>
-            
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-
-            <div class="dropdown col-sm-2">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                </button>
-            
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- <div class="category-drop-down dropdown-menu">
-                <button class="drop-down-item" type="button">Category1</button>
-            </div>
-
-            <div class="category-drop-down dropdown-menu">
-                <a class="drop-down-item">Category1</a>
-                <a class="drop-down-item">Category2</a>
-                <a class="drop-down-item">Category3</a>
-            </div>
-
-            <div class="category-drop-down dropdown-menu">
-                <a class="drop-down-item">Category1</a>
-                <a class="drop-down-item">Category2</a>
-            </div>
-
-            <div class="category-drop-down dropdown-menu">
-                <a class="drop-down-item">Category1</a>
-                <a class="drop-down-item">Category2</a>
-                <a class="drop-down-item">Category3</a>
-                <a class="drop-down-item">Category4</a>
-            </div>
-
-            <div class="category-drop-down dropdown-menu">
-                <a class="drop-down-item">Category1</a>
-            </div> -->
     </section>
 
     <section class="top-advertising-container row">

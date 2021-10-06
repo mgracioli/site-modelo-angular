@@ -44,6 +44,22 @@ $dark-grey: #242424;
     text-decoration: none;
 }
 
+.input-password-eye > input{
+    padding: 6px 25px 6px 12px;
+}
+
+.input-password-eye{
+    position: relative;
+}
+
+.input-password-eye .eye{
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4em;
+}
+
 .btn-login{
     background-color: #234d59;
     color: $white;
