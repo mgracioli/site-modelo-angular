@@ -20,21 +20,12 @@ $dark-grey: #242424;
 
 .carousel-frame{
     position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
     height: inherit;
     display: flex;
     align-items: center;
     width: 100%;
     overflow: hidden;   //esconde os itens que ultrapassarem o espaço da div carousel-list
-    //padding: 0 30px;
-    //background-color: rebeccapurple;
 }
-
-// .carousel-frame:hover{
-//     overflow-y: visible;  //mostra todos os produtos e não interfere no "transform: scale()" do card
-// }
 
 .carousel-list{
     margin-left: 25px;

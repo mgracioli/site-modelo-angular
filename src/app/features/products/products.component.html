@@ -1,8 +1,8 @@
 <div class="products-container container-fluid">
     
-    <section class="search-bar-container row">
-        <div class="search-bar row justify-content-around">
-            <div class="search col-6 col-sm-5 col-md-5">
+    <section class="search-bar-container container-fluid">
+        <div class="search-bar row align-items-center">
+            <div class="search col-5 col-sm-5 col-md-5">
                 <div class="search-border row justify-content-center">
                     <input class="search-input col-10 col-md-10 col-lg-11">
                 
@@ -12,20 +12,28 @@
                 </div>
             </div>
 
-            <div class="sign-in-products col-4 col-sm-3 col-md-2">
-                <a>
-                    <b>SIGN IN</b> <br>into your account
-                    <i class="bi bi-caret-down-fill"></i>
-                </a>
+            <div class="dropdown-category col-3 col-md-2">
+                <div class="category-btn text-start" type="button" >
+                    <b>SIGN IN</b> <br>into your account <i class="bi bi-caret-down-fill"></i>
+                                            
+                    <div class="dropdown-submenu signin">
+                        <li class="dropdown-submenu-item">
+                            <a class="btn-outline" routerLinkActive="active" routerLink="/login">SIGN-IN</a>
+                        </li>
+                        <li class="dropdown-submenu-item">
+                            <span class="dont-have-account-span">Don't have an account? 
+                                <a routerLinkActive="active" routerLink="/">Create account</a>
+                            </span>
+                        </li>
+                    </div>
+                </div>
             </div>
 
-            <div class="shopping-cart-container col-1">
-                <!-- <div class="shopping-cart"> -->
-                    <a class="shopping-cart">
-                        <i class="bi bi-basket3"></i>
-                        <span class="cart-quantity">{{ shoppingCartQuantity }}</span>
-                    </a>
-                <!-- </div>  -->
+            <div class="shopping-cart-container col-1 offset-xs-2">
+                <a class="shopping-cart" href="/">
+                    <i class="bi bi-basket3 shopping-basket"></i>
+                    <span class="cart-quantity">{{ shoppingCartQuantity }}</span>
+                </a>
             </div>
         </div>    
         
