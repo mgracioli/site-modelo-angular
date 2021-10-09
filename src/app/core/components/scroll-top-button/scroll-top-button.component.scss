@@ -1,7 +1,7 @@
 $white: rgb(255, 255, 255);
 
 .btn-container{
-    display: none;
+    display: block;
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -11,8 +11,11 @@ $white: rgb(255, 255, 255);
     border: 1px solid #234d59;
     background-color: rgba($white, 0.90);
     box-shadow: 2px 1px 6px #8e8e8eda;
-    animation: fadeIn .8s;
     cursor: pointer;
+    transition: transform 0.02s;
+    transform: rotateX(90deg);  //esconde o botão
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
 }
 
 .btn-to-top{
@@ -41,10 +44,6 @@ $white: rgb(255, 255, 255);
 }
 
 .showBtn{
-    display: block;
-}
-
-@keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    transform: rotateX(0deg); //mostra o botão
+    opacity: 1;
 }
