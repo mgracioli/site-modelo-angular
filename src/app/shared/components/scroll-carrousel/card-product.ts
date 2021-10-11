@@ -1,5 +1,5 @@
 export interface cardProduct{
-     "cellName": string,
+     "productDescription": string,
      "price": string,
      "storeName": string
 }

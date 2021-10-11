@@ -115,17 +115,20 @@ $dark-grey: #242424;
     width: 55px;
     height: 55px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+   // top: 50%;
+   // transform: translateY(-50%);
     box-shadow: 1px 3px 6px #8e8e8eda; 
     z-index: 1;
     transition: color 0.5s ease-in-out;
-    transition: opacity .4s ease-out;
+    transition: transform 0.02s;
+    transform: rotateX(90deg);  //esconde o botão
+    transition: opacity 0.5s ease-out;
     opacity: 0;
 }
 
 .btn-scroll-card.show-btn{
-   opacity: 1;
+    transform: rotateX(0deg);
+    opacity: 1;  
 }
 
 .btn-scroll-card.right{ 
