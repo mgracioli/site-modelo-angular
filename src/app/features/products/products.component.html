@@ -112,7 +112,7 @@
         <app-scroll-carrousel></app-scroll-carrousel>
     </section>
     
-    <section class="cards-container row">
+    <section class="cards-container">
 
         <!-- essa div é só de exemplo para ter um contreudo no container, seria mais facil já criar uma imagem pronta e colocar ela como backgrund-->
         <div class="cards-container-header">
@@ -125,29 +125,48 @@
         </div>
 
         <div class="cards-wrapper">
-            <div class="card-wrapper">
+            <div class="card-wrapper" *ngFor="let prodCategory of prodCategories">
                 <h4 class="card-headline">
-                    Gift Cards
+                    {{ prodCategory }}
                 </h4>
+                
+                <div class="card-content">
+                    <div class="card-product p{{ prodsPerCard }}" *ngFor="let n of [].constructor(prodsPerCard)">
+                        <img class="card-img">
+                
+                        <small class="card-description">
+                            {{ n }}
+                        </small>
+                    </div>
+                </div>
             </div>
         
-            <div class="card-wrapper">
+            <!-- <div class="card-wrapper">
                 <h4 class="card-headline">
                     Top Deal
                 </h4>
+                <div class="card-content">
+                    
+                </div>
             </div>
 
             <div class="card-wrapper">
                 <h4 class="card-headline">
                     Top Deal
                 </h4>
+                <div class="card-content">
+                    
+                </div>
             </div>
 
             <div class="card-wrapper">
                 <h4 class="card-headline">
                     Audiobooks
                 </h4>
-            </div>
+                <div class="card-content">
+                    
+                </div>
+            </div> -->
         </div>
     </section>
     
