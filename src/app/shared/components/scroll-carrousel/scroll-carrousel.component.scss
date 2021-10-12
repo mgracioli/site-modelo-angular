@@ -52,6 +52,10 @@ $dark-grey: #242424;
     box-shadow: 0px 2px 3.5px #dbdbdbda;
 }
 
+.carousel-card:last-child:hover{
+    transform: scale(125%) translate(-45px, 0);
+}
+
 .card-content{
     width: 100%;
     height: 100%;

@@ -105,25 +105,53 @@
     </section>
 
     <section class="top-advertising-container row">
-        <div class="top-advertising">
-            <h1>Check out our best products</h1>
-        </div>
+        <h1>Check out our best products</h1>
     </section>
 
     <section class="carousel-of-products-container row">
-        <div class="carousel-products">
-            <app-scroll-carrousel></app-scroll-carrousel>
+        <app-scroll-carrousel></app-scroll-carrousel>
+    </section>
+    
+    <section class="cards-container row">
+
+        <!-- essa div é só de exemplo para ter um contreudo no container, seria mais facil já criar uma imagem pronta e colocar ela como backgrund-->
+        <div class="cards-container-header">
+            <div class="cards-container-header-text">
+                <h1> Epic Daily Deals </h1>
+                <h3> Shop now, save more </h3>
+            </div>
+
+            <img src="bg-products-book.png" class="cards-container-header-img" alt="card container image">
+        </div>
+
+        <div class="cards-wrapper">
+            <div class="card-wrapper">
+                <h4 class="card-headline">
+                    Gift Cards
+                </h4>
+            </div>
+        
+            <div class="card-wrapper">
+                <h4 class="card-headline">
+                    Top Deal
+                </h4>
+            </div>
+
+            <div class="card-wrapper">
+                <h4 class="card-headline">
+                    Top Deal
+                </h4>
+            </div>
+
+            <div class="card-wrapper">
+                <h4 class="card-headline">
+                    Audiobooks
+                </h4>
+            </div>
         </div>
     </section>
     
-    
-    <section class=" container-com-cards-amazon row">
-        <div class="card1"></div>
-        <div class="card2"></div>
-        <div class="card3"></div>
-    </section>
-    
-        
+    <!-- faz o download de um pdf - para funcionar é preciso rodar o servidor e o app com "npm rum start" -->
     <button class="btn btn-success" (click)="downloadMenu()">Download PDF</button>
 
     <app-whatsapp-button></app-whatsapp-button>
