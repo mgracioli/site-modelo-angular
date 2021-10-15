@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { cardProduct } from './card-product';
+import { cardProduct } from './models/card-product';
 
 @Component({
 	selector: 'app-scroll-carrousel',

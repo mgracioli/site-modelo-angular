@@ -6,6 +6,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopButtonComponent } from './components/scroll-top-button/scroll-top-button.component';
 import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-button.component';
+import { ScrollCarrouselComponent } from './components/scroll-carrousel/scroll-carrousel.component';
+import { SearchNavigateBarComponent } from './components/search-navigate-bar/search-navigate-bar.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-b
     FooterComponent,
     ScrollTopButtonComponent,
     WhatsappButtonComponent,
+    ScrollCarrouselComponent,
+    SearchNavigateBarComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-b
     NavbarComponent,
     FooterComponent,
     ScrollTopButtonComponent,
-    WhatsappButtonComponent
+    WhatsappButtonComponent,
+    ScrollCarrouselComponent,
+    SearchNavigateBarComponent
   ]
 })
 export class CoreModule { }

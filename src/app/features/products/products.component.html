@@ -1,108 +1,6 @@
 <div class="products-container container-fluid">
     
-    <section class="search-bar-container container-fluid">
-        <div class="search-bar row align-items-center">
-            <div class="search col-5 col-lg-4">
-                <div class="search-border row justify-content-center">
-                    <input class="search-input col-10 col-md-10 col-lg-11">
-                
-                    <button class="search-btn col-2 col-lg-1" type="submit">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="dropdown-category dropdown-search-bar col-3 col-md-2">
-                <div class="category-btn text-start" type="button" >
-                    <b>SIGN IN</b> <br>into your account <i class="bi bi-caret-down-fill"></i>
-                                            
-                    <div class="dropdown-submenu signin">
-                        <li class="dropdown-submenu-item">
-                            <a class="btn-outline" routerLinkActive="active" routerLink="/login">SIGN-IN</a>
-                        </li>
-                        <li class="dropdown-submenu-item">
-                            <span class="dont-have-account-span">Don't have an account? 
-                                <a routerLinkActive="active" routerLink="/login/new-account">Create account</a>
-                            </span>
-                        </li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="shopping-cart-container col-2 col-md-1 ms-auto"> <!--ms-auto manda o shopping-cart-container para o mais longe possivel do elemento irmão-->
-                <a class="shopping-cart" href="/">
-                    <i class="bi bi-basket3 shopping-basket"></i>
-                    <span class="cart-quantity">{{ shoppingCartQuantity }}</span>
-                </a>
-            </div>
-        </div>    
-        
-        <div class="categories-menu-bar row">
-            <div class="categories col-12 col-md-8 col-lg-6">
-                <div class="dropdown-category col-2">
-                    <div class="category-btn" type="button" id="">
-                        Electronics <i class="bi bi-caret-down-fill"></i>
-                        
-                        <ul class="dropdown-submenu">
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Action</a>
-                            </li>
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Another action</a>
-                            </li>
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-    
-                <div class="dropdown-category col-2">
-                    <div class="category-btn" type="button" id="">
-                        Homeware <i class="bi bi-caret-down-fill"></i>
-
-                        <ul class="dropdown-submenu">
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Action</a>
-                            </li>
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Another action</a>
-                            </li>
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="dropdown-category col-2">
-                    <div class="category-btn" type="button" id="">
-                        Arts & Crafts <i class="bi bi-caret-down-fill"></i>
-                        
-                        <ul class="dropdown-submenu">
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Action</a>
-                            </li>
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Another action</a>
-                            </li>
-                            <li class="dropdown-submenu-item">
-                                <a class="dropdown-submenu-link" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="categories-menu-right col-md-4 col-lg-6">
-                <div class="categories-menu-text" type="button">
-                    <span>
-                        Get to know our <b>Electronics session</b>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <app-search-navigate-bar></app-search-navigate-bar>
 
     <section class="top-advertising-container row">
         <h1>Check out our best products</h1>
@@ -113,7 +11,6 @@
     </section>
     
     <section class="cards-container">
-
         <!-- essa div é só de exemplo para ter um contreudo no container, seria mais facil já criar uma imagem pronta e colocar ela como backgrund-->
         <div class="cards-container-header">
             <div class="cards-container-header-text">
@@ -124,49 +21,22 @@
             <img src="bg-products-book.png" class="cards-container-header-img" alt="card container image">
         </div>
 
-        <div class="cards-wrapper">
-            <div class="card-wrapper" *ngFor="let prodCategory of prodCategories">
+        <div class="cards-container-cards-wrapper">
+            <div class="card-wrapper" *ngFor="let category of prodCategories; index as i">
                 <h4 class="card-headline">
-                    {{ prodCategory }}
+                    {{ category }}
                 </h4>
+            
+                <div class="card-content p{{ prodsPerCard[i] }}">
+                    <div class="card-product" *ngFor="let prods of [].constructor(prodsPerCard[i]); index as in">
+                        <img id="card-img-{{in}}" alt="{{ category }} product"> <!-- esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id)-->
                 
-                <div class="card-content">
-                    <div class="card-product p{{ prodsPerCard }}" *ngFor="let n of [].constructor(prodsPerCard)">
-                        <img class="card-img">
-                
-                        <small class="card-description">
-                            {{ n }}
-                        </small>
+                        <p id="card-desc-{{in}}">
+                            Descrição: {{in}}
+                        </p>
                     </div>
                 </div>
             </div>
-        
-            <!-- <div class="card-wrapper">
-                <h4 class="card-headline">
-                    Top Deal
-                </h4>
-                <div class="card-content">
-                    
-                </div>
-            </div>
-
-            <div class="card-wrapper">
-                <h4 class="card-headline">
-                    Top Deal
-                </h4>
-                <div class="card-content">
-                    
-                </div>
-            </div>
-
-            <div class="card-wrapper">
-                <h4 class="card-headline">
-                    Audiobooks
-                </h4>
-                <div class="card-content">
-                    
-                </div>
-            </div> -->
         </div>
     </section>
     
