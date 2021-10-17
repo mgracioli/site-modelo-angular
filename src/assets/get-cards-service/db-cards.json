@@ -1,0 +1,32 @@
+[
+    {
+        "imgUrl": "assets/home/home-thumb-1.jpg",
+        "cardCaptionTitle": "Nulla vitae massa",
+        "cardCaptionText": "Nulla vitae massa quis neque blandit vehicula ac id eros. Fusce massa velit."
+    },
+    {
+        "imgUrl": "assets/home/home-thumb-2.jpg",
+        "cardCaptionTitle": "Nulla vitae massa",
+        "cardCaptionText": "Nulla vitae massa quis neque blandit vehicula ac id eros. Fusce massa velit."
+    },
+    {
+        "imgUrl": "assets/home/home-thumb-3.jpg",
+        "cardCaptionTitle": "Nulla vitae massa",
+        "cardCaptionText": "Nulla vitae massa quis neque blandit vehicula ac id eros. Fusce massa velit."
+    },
+    {
+        "imgUrl": "assets/home/home-thumb-4.jpg",
+        "cardCaptionTitle": "Nulla vitae massa",
+        "cardCaptionText": "Nulla vitae massa quis neque blandit vehicula ac id eros. Fusce massa velit."
+    },
+    {
+        "imgUrl": "assets/home/home-thumb-5.jpg",
+        "cardCaptionTitle": "Nulla vitae massa",
+        "cardCaptionText": "Nulla vitae massa quis neque blandit vehicula ac id eros. Fusce massa velit."
+    },
+    {
+        "imgUrl": "assets/home/home-thumb-6.jpg",
+        "cardCaptionTitle": "Nulla vitae massa",
+        "cardCaptionText": "Nulla vitae massa quis neque blandit vehicula ac id eros. Fusce massa velit."
+    }  
+]

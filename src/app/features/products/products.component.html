@@ -13,31 +13,63 @@
     <section class="cards-container">
         <!-- essa div é só de exemplo para ter um contreudo no container, seria mais facil já criar uma imagem pronta e colocar ela como backgrund-->
         <div class="cards-container-header">
-            <div class="cards-container-header-text">
+            <a class="bg-carousel-link" routerLink="/">
+                <img src="bg-blue.png" class="bg-carousel-img" alt="products-carousel-image">
+            </a>
+
+            
+            <!-- <div class="cards-container-header-text">
                 <h1> Epic Daily Deals </h1>
                 <h3> Shop now, save more </h3>
             </div>
 
-            <img src="bg-products-book.png" class="cards-container-header-img" alt="card container image">
+            <img src="bg-products-book.png" class="cards-container-header-img" alt="card container image"> -->
         </div>
 
-        <div class="cards-container-cards-wrapper">
-            <div class="card-wrapper" *ngFor="let category of prodCategories; index as i">
-                <h4 class="card-headline">
-                    {{ category }}
-                </h4>
-            
-                <div class="card-content p{{ prodsPerCard[i] }}">
-                    <div class="card-product" *ngFor="let prods of [].constructor(prodsPerCard[i]); index as in">
-                        <img id="card-img-{{in}}" alt="{{ category }} product"> <!-- esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id)-->
-                
-                        <p id="card-desc-{{in}}">
-                            Descrição: {{in}}
-                        </p>
+        <div class="cards-container-cards-wrapper container-fluid">
+            <div class="card-row row justify-content-evenly">
+                <div class="card-wrapper col-10 col-sm-6 col-lg-4 col-xl-3" *ngFor="let category of prodCategories; index as i">
+                    <div class="card-inner-wrapper">
+                        <h4 class="card-headline">
+                            {{ category }}
+                        </h4>
+                    
+                        <div class="card-content p{{ prodsPerCard[i] }}">
+                            <div class="card-product" *ngFor="let prods of [].constructor(prodsPerCard[i]); index as in">
+                                <img src="" class="{{ category }}" alt="{{ category }} product"> <!-- esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id)-->
+                                <!-- <img id="card-img-cat-{{i}}-img{{in}}" alt="{{ category }} product"> esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id) -->
+                        
+                                <p id="card-desc-{{in}}">
+                                    Card: {{i}}
+                                    img: {{in}}<br>
+                                    categoria e id: {{ category }} 
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
+            
         </div>
+    </section>
+
+    <section class="banner-container container-fluid">
+        <div class="banner-row row justify-content-center align-content-center">
+            <div class="banner-content col-10">
+                <span class="banner-icon">
+                    <i class="bi bi-truck"></i>
+                </span>
+                <span class="banner-text">
+                    <h1>
+                        Free shipping
+                    </h1>
+                    <h3>
+                        Save up to 50% 
+                    </h3>   
+                </span>              
+            </div>
+        </div> 
     </section>
     
     <!-- faz o download de um pdf - para funcionar é preciso rodar o servidor e o app com "npm rum start" -->

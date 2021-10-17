@@ -47,3 +47,6 @@ Thumbs.db
 #o comando abaixo foi inserido após ter sido criado o servidor
 # Node
 /server/node_modules
+
+# diretório Garbage
+/src/app/garbage

@@ -7,233 +7,12 @@ $bg-color: #eeeeee;
     padding: 0;
 }
 
-// a{
-//     text-decoration: none;
-// }
-
-//icone caret-down
-// .bi-caret-down-fill{
-//     font-size: 0.7em;
-// }
-
 .products-container{
     margin-top: 60px;   //margem referente à navbar
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
     background-color: $bg-color;
 }
-
-// .search-bar-container{
-//     height: 100px;
-//     position: relative;
-//     background-color: #303030;
-// }
-
-// .search-bar{
-//     height: 55%;
-// }
-
-// .search-input{
-//     font-size: 15px;
-//     line-height: 15px;
-//     padding: 7px 10px 10px 0;
-//     margin: 0;
-//     border: 0;
-//     border-radius: 5px 0 0 5px;
-//     height: 36px;
-//     background: 0 0;
-//     color: #111;
-//     background-color: $white;
-//     outline: 0;
-//     -webkit-appearance: none;
-//     box-shadow: none;
-//     text-indent: 8px;
-// }
-
-// .search-btn{
-//     content: url('./images/search-icon.png');
-//     height: 36px;
-//     border-radius: 0 5px 5px 0;
-//     background-color: #78d0db;
-//     border: 0;
-//     font-size: 2em; //tamanho do icone da lupa de busca
-// }
-
-// .search-border{
-//     width: 100%;
-//     border: 3px solid #303030;   //essa borda fica invisível, pelo mesmo motivo da classe .dropdown-category
-//     border-radius: 8px;
-// }
-
-// .search-border:focus-within{
-//     border-color: #41c8da;
-//     background-color: #41c8da;
-// }
-
-// .search-btn:hover{
-//     background-color: #59b6c2;
-// }
-
-// .shopping-cart-container{
-//     position: relative;
-//     height: 100%;
-// }
-
-// .shopping-cart{
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-// }
-
-// .shopping-basket{
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-//     font-size: 4.5em;
-//     color: $white;
-//     text-align: center;
-//     line-height: 55px;
-// }
-
-// .cart-quantity{
-//     position: absolute;
-//     text-align: center;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     bottom: 6px;
-//     color: #78d0db;
-//     font-size: 1rem;
-//     font-weight: 800;
-// }
-
-// .categories-menu-bar{
-//     height: 45%;
-//     background-color: #333333;
-// }
-
-// .categories{
-//     display: flex;
-//     justify-content: flex-start;
-//     align-items: center
-// }
-
-// .dropdown-category{
-//     width: fit-content;
-//     height: 100%;
-//     padding: 11px 0px;
-//     position: relative; //esse position serve para posicionar os elementos dropdown-submenu
-// }
-
-// .dropdown-category.dropdown-search-bar{
-//     padding: 7px 0px;
-// }
-
-// .category-btn{
-//     color: $white;
-//     font-size: 1.4em;
-//     border: 1px solid #333333;  //essa borda é para ficar invisível mesmo, como o width está como fit-content e na hora que faz o hover surge uma borda branca ele vai redimensionar o width por causa dessa borda, daí essa borda invisivel serve para não redimensionar e o botão não ficar se mexendo
-//     border-radius: 2px;
-//     padding: 0px 5px;
-// }
-
-// .dropdown-category:hover .category-btn, .categories-menu-text:hover{
-//     border-color: $white;
-// }
-
-// .dropdown-category:hover .dropdown-submenu{
-//     transform: scale(1) //mostra o dropdown-submenu
-// }
-
-// .dropdown-submenu{
-//     position: absolute; //absoluto em relação ao elemento dropdown-category
-//     left: 0; //left: 0 em relação ao primeiro elemento pai que tiver um position diferente de static. Nesse caso, é o elemento "dropdown-category", portanto, esse elemento vai ficar no mesmo left que o elemento dropdown-category
-//     top: 100%; //100% do tamanho do elemento pai + 12px
-//     width: 150px;
-//     text-align: start;
-//     font-size: 1em;
-//     list-style: none;  
-//     background-color: #333333;
-//     border-radius: 3px;
-//     transform: scale(0);    //esconde o menu e mostra quando for feito o hover
-//     transform-origin: top center;
-//     z-index: 2;
-// }
-
-// .dropdown-submenu.signin{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     width: 300px;
-//     height: 150px;
-//     background-color: $white;
-// }
-
-// .dropdown-submenu-item:not(:last-child){    //aplica margem exceto no último <li> (dropdown-submenu-item" 
-//     margin-bottom: 8px;
-// }
-
-// .dropdown-submenu-link{
-//     padding: 0 10px;
-//     color: $white;
-//     display: block;
-// }
-
-// .dropdown-submenu-link:hover{
-//     background-color: #4d4d4d;
-// }
-
-// .categories-menu-right{
-//     height: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-end;
-//     color: $white;
-//     font-size: 1.5em;
-//     line-height: 1.2em;
-// }
-
-// @media screen and (max-width: 768px){
-//     .categories-menu-right{
-//         display: none;
-//     }
-// }
-
-// .categories-menu-text{
-//     width: fit-content;
-//     height: fit-content;
-//     border: 1px solid #333333;   //essa borda também é para ficar invisível, assim como a da classe .dropdown-category
-//     float: right;
-//     padding: 2px 5px;
-// }
-
-// .btn-outline{
-//     position: relative;
-//     background-color: #234d59;
-//     color: $white;
-//     padding: 7px 60px;
-//     border: 1px solid $dark-grey;
-//     font-size: 1.3em;
-// }
-
-// .btn-outline:hover{
-//     background: #2c606e;
-//     border-color: #234e58;
-//     transition: all 0.3s ease-out;
-//     transition: 250ms;
-// }
-
-// .dont-have-account-span{
-//     font-size: 1em;
-//     color: #4d4d4d;
-//     position: relative;
-//     width: 100%;
-//     padding-top: 10px;
-//     border-style: solid;
-//     border-radius: 4px;
-//     border-image: linear-gradient(to right, rgba(238, 238, 238, 0.281), rgba(155, 155, 155, 0.226), rgba(238, 238, 238, 0.281))100% 1;
-//     border-bottom: none; 
-// }
 
 .top-advertising-container{
     position: relative;
@@ -277,53 +56,75 @@ $bg-color: #eeeeee;
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: linear-gradient(to bottom, #41c8da 13%, $bg-color 30%);
-}
-
-/*classes só de exemplo (para nao precisar criar uma imagem de background eu criei essas classes)*/
-.cards-container-header{
-    display: flex;
-    justify-content: center;
-    width: 100%;
     height: fit-content;
+    //background: linear-gradient(to bottom, #41c8da 13%, $bg-color 30%);
 }
 
-.cards-container-header-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 1;
-    padding: 0 25px;
-    z-index: 2;
-}
-
-.cards-container-header-text h1{
-    font-size: 3.8em;
-    font-weight: 900;
-    color: $dark-grey;
-}
-
-.cards-container-header-img{
-    src: url('./images/bg-products-book.png');
-    object-fit: contain;
+.cards-container-header{
+    //display: flex;
+    //justify-content: center;
+    width: 100%;
     height: 250px;
-    padding: 0 25px;
+    position: relative;
 }
+
+.bg-carousel-link{
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    display: flex;
+}
+
+.bg-carousel-img{
+    flex: 1 1 400px;
+    width: inherit;
+    height: 440px;
+    src: url('./images/background-carousel/bg-blue.png');
+    //object-fit: contain;
+}
+
+// .cards-container-header-text{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     flex-shrink: 1;
+//     padding: 0 25px;
+//     z-index: 2;
+// }
+
+// .cards-container-header-text h1{
+//     font-size: 3.8em;
+//     font-weight: 900;
+//     color: $dark-grey;
+// }
+
+// .cards-container-header-img{
+//     //src: url('./images/bg-products-book.png');
+//     object-fit: contain;
+//     height: 250px;
+//     padding: 0 25px;
+// }
 /*fim das classes de exemplo*/
 
 .cards-container-cards-wrapper{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    height: 365px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.card-row{
+    padding: 0 5px;
 }
 
 .card-wrapper{
-    width: 350px;
-    height: 420px;
-    padding: 15px;
-    margin-bottom: 20px;
+    height: fit-content;
+    padding: 5px;
+}
+
+.card-inner-wrapper{
+    height: 350px;
+    padding: 13px;
     background-color: $white;
     display: flex;
     flex-direction: column;
@@ -366,6 +167,44 @@ $bg-color: #eeeeee;
     width: 100%;
 }
 
+.banner-container{
+    height: 200px;
+    width: 100%;
+}
+
+.banner-row{
+    height: 100%;
+    width: 100%;
+}
+
+.banner-content{
+    height: 90%;
+    padding: 0 20px;
+    background: linear-gradient(to bottom, #54cada 30%, #7ed5e0 70%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-icon{
+    // display: flex;
+    flex: 1;
+    font-size: 13em;
+    color: #e069a3;
+    height: 100%;
+    text-align: center;
+    //width: 30%;
+}
+
+.banner-text{
+    flex: 1;
+    text-align: end;
+}
+
+.banner-text h1{
+    font-weight: 800;
+}
+
 @media screen and (max-width: 420px){
     .carousel-of-products-container{
         display: none;
@@ -376,12 +215,18 @@ $bg-color: #eeeeee;
     }
 }
 
-@media screen and (max-width: 576px){
-    .cards-container-header{
-        flex-direction: column;
-    }
+// @media screen and (max-width: 576px){
+//     .cards-container-header{
+//         flex-direction: column;
+//     }
 
-    .cards-container-header-text{
-        padding: 20px 25px;
+//     .cards-container-header-text{
+//         padding: 20px 25px;
+//     }
+// }
+
+@media screen and (max-width: 575px) {
+    .cards-container-cards-wrapper{
+        height: 725px;
     }
 }
