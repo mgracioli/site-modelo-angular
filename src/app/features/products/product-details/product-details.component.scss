@@ -11,7 +11,6 @@ section{
     margin-bottom: 30px;
 }
 
-
 .breadcrumb{
     height: 50px;
     line-height: 50px;
@@ -119,22 +118,41 @@ section{
 }
 
 .client-rating-bar{
-    display: flex;
-    align-items: center;
+    //display: flex;
+    //align-items: center;
     //justify-content: space-evenly;
     font-weight: 100;
     height: 50px;
 }
 
-.client-rating-bar span{
-    margin-left: 5px;
+.stars{
+    position: relative;
+    font-size: 22px;
+    width: 91px;    //esse width está relacionado com a função fillRatingStars(), portanto, se alterar essa propriedade, as cores das estrelas não vão funcionar corretamente
+}
+
+.background-stars{
+    position: absolute;
+    color: #E5E5E5;
+}
+
+.colored-stars{
+    //width: 10%; //o atributo width, que serve para colorir as estrelas de acordo com o valor da avaliação dos clientes é dinâmico e definido na função fillRatingStars()
+    position: absolute;
+    overflow: hidden;
+    color: #FFCC03;
 }
 
 .stars-percent{
-    display: inline-block;
-    width: 20%;
-    color: #FFCC03;
-    font-size: 1.3em
+    display: inline;
+}
+
+.rating-values{
+    position: relative;
+}
+
+.client-rating-bar span{
+    margin-left: 5px;
 }
 
 .seller-identification span img{
@@ -161,20 +179,63 @@ section{
     color: rgb(24, 182, 24);
 }
 
+.colors-container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.colors-container > div{
+    height: 100%;
+}
+
+.color-option{
+    width: 40px;
+    height: 80%;
+    margin-right: 10px;
+    border: 1px solid $dark-grey;
+}
+
+.color-option:hover{
+    cursor: pointer;
+}
+
+.colors-container input{
+    display: none;
+}
+
+.colors-container label{
+    border: 3px dotted transparent;
+    position: relative;
+}
+
+.colors-container i{
+    font-size: 0.8em;
+    position: absolute;
+    bottom: -9px;
+    right: -6px;
+    color: rgb(24, 182, 24);
+    display: none;
+}
+
+.colors-container input:checked + label{
+    border: 3px dotted rgb(24, 182, 24);
+} 
+.colors-container input:checked + label i{
+    display: block;
+} 
+
 .payment{
     color: $dark-grey;
     height: 40px;
     line-height: 40px;
 }
 
-
-
-
-
-
+.payment a{
+    text-decoration: underline;
+}
 
 .payment-options{
-    //border: 1px solid $dark-grey;
     height: fit-content;
 }
 

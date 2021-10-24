@@ -28,14 +28,25 @@
             <div class="curr-prod-sell-infos">
                 <div class="client-rating-bar">
                     <div class="stars">
-                        <div class="stars-percent">★</div>
-                        <div class="stars-percent">★</div>
-                        <div class="stars-percent">★</div>
-                        <div class="stars-percent">★</div>
-                        <div class="stars-percent">★</div>
+                        <div class="background-stars">
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                        </div>
+                        <div class="colored-stars" id="colored-stars">
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                            <div class="stars-percent">★</div>
+                        </div>
                     </div>
-                    <span>{{ productDetails.rating }}</span>
-                    <span>({{ productDetails.numberOfEvaluations }})</span>
+                    <div class="rating-values">
+                        <!-- <span>{{ productDetails.rating }}</span>
+                        <span>({{ productDetails.numberOfEvaluations }})</span> -->
+                    </div>
                 </div>
 
                 <div class="seller-identification">
@@ -49,7 +60,22 @@
                     <div *ngIf="productDetails.discountPercent != 0" class="total-discount"> ({{ productDetails.discountPercent }}% discount) </div>
                 </div>
 
-                <a class="payment" type="button" (click)="goToPaymentOptions()">More payment methods</a>
+                <div class="product-colors" *ngIf="productDetails.colors[0] != null">
+                    Color <span id="color-name"> </span>
+                    
+                    <div class="colors-container">
+                        <div *ngFor="let color of productDetails.colors">
+                            <input id={{color}} name="inp-name" type="radio" (click)="changeColorName($event)">
+                            <label for={{color}} class="color-option" [ngStyle]="{'background-color': color}">
+                                <i class="bi bi-check-circle-fill check-symbol"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment">
+                    <a type="button" (click)="goToPaymentOptions()">More payment methods</a>
+                </div>
             </div>
         </div>
     </section>

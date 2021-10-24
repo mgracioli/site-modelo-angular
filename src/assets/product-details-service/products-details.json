@@ -1,19 +1,20 @@
 [
     {
         "category": "Homeware",
-        "id": "1",
+        "id": "0",
         "description": "Blender new Generations",
-        "rating": 4,
+        "rating": 2.3,
         "numberOfEvaluations": 13,
         "seller": "top Sell",
         "shipper": "top Sell",
         "originalPrice": 255.99,
         "discountPercent": 10,
-        "priceWithDiscount": 224.55
+        "priceWithDiscount": 224.55,
+        "colors": {}
     },
     {   
         "category": "Homeware",
-        "id": "2",
+        "id": "1",
         "description": "kit 7 pots 'vintage-houseware' collection ",
         "rating": 3.5,
         "numberOfEvaluations": 3,
@@ -21,11 +22,12 @@
         "shipper": "BRAND",
         "originalPrice": 255.25,
         "discountPercent": 0,
-        "priceWithDiscount": 255.33
+        "priceWithDiscount": 255.33,
+        "colors": {}
     },
     {   
         "category": "Furniture",
-        "id": "3",
+        "id": "2",
         "description": "Drop Leaf Dining Table in Solid Pine - Seats 2 - Emerson",
         "rating": 5,
         "numberOfEvaluations": 50,
@@ -33,11 +35,12 @@
         "shipper": "Top Furnture",
         "originalPrice": 104.909,
         "discountPercent": 20,
-        "priceWithDiscount": 83.92
+        "priceWithDiscount": 83.92,
+        "colors": {}
     },
     {   
         "category": "Furniture",
-        "id": "4",
+        "id": "3",
         "description": "2X Faux Leather Dining Chairs PU Padded Dining Room Kitchen Chair Set Family",
         "rating": 4.5,
         "numberOfEvaluations": 99,
@@ -45,6 +48,24 @@
         "shipper": "BRAND",
         "originalPrice": 119.55,
         "discountPercent": 0,
-        "priceWithDiscount": 119.55
+        "priceWithDiscount": 119.55,
+        "colors": {}
+    },
+    {   
+        "category": "Furniture",
+        "id": "4",
+        "description": "64” Abby Upholstered Rolled Arm Loveseat - Brookside Home",
+        "rating": 1.7,
+        "numberOfEvaluations": 412,
+        "seller": "Furniture brothers",
+        "shipper": "BRAND",
+        "originalPrice": 607.49,
+        "discountPercent": 5,
+        "priceWithDiscount": 577.11,
+        "colors": [
+            "#383838",
+            "#ededed",
+            "#789199"
+        ]
     }
 ]

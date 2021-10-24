@@ -9,4 +9,5 @@ export interface ProductDetails{
     "originalPrice": number,
     "discountPercent": number,
     "priceWithDiscount": number,
+    "colors": string[]
 }
