@@ -12,7 +12,7 @@
                     elit. Donec nec viverra erat, a eleifend nisi.
                 </p>
 
-                <a class="btn-outline btn-sign-in" routerLinkActive="active" routerLink="/login">SIGN-IN</a>
+                <a class="btn-outline btn-sign-in" routerLink="/login">SIGN-IN</a>
             </div>
         </div>     
     </section>
@@ -38,9 +38,9 @@
             <div class="cards-row row">
                 <div class="cards-wrapper col-9 col-sm-6 col-md-4 col-lg-3 col-xl-2" *ngFor="let card of cards$ | async"  >
                     <div class="cards-container">
-                        <a class="cards-link" routerLinkActive="active" routerLink="/">
+                        <a class="cards-link" routerLink="/">
                             
-                            <img src="{{ card.imgUrl }}" alt="Imagem thumbnail">
+                            <img src="{{ card.imgUrl }}" alt="Imagem thumbnail" loading="lazy">
 
                             <div class="card-caption text-center">
                                 <h3>
@@ -67,7 +67,7 @@
                     nec lacus posuere fringilla. 
                 </p>
     
-                <a class="btn-outline" routerLinkActive="active" routerLink="/users">Your products</a>  
+                <a class="btn-outline" routerLink="/users">Your products</a>  
             </div>
         </section> 
     </section>

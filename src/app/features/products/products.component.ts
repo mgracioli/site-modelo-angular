@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileService } from 'server/src/services/file.service';
 import { environment } from 'src/environments/environment';
-import { cardProduct } from './models/card-product';
-import { cardProducts } from './models/prodCategories';
 
 @Component({
   selector: 'app-products',
@@ -13,9 +11,10 @@ export class ProductsComponent implements OnInit {
 
   prodCategories: string[] = ['GiftCards', 'Top Deal', 'Audio Books', 'HouseWare']
   prodsPerCard!: number[]
-  //cardProducts!: cardProducts
 
-  constructor(private fileService: FileService) { }
+  constructor(
+    private fileService: FileService
+  ) { }
 
   ngOnInit(): void {
     //atualiza a quantidade de produtos em cada card. Cada vez que a página recarrega, cada card vai mostrar uma quantidade diferente de produtos (1 ou 4 produtos)
@@ -48,9 +47,9 @@ export class ProductsComponent implements OnInit {
     const categoria: string = this.prodCategories[0]
     var imgs = document.getElementsByClassName(categoria)
 
-    console.log(categoria)
-    console.log(imgs)
-    console.log("imgs[0]: "+imgs[0])  //undefined porque?
+    // console.log(categoria)
+    // console.log(imgs)
+    // console.log("imgs[0]: "+imgs[0])  //undefined porque?
 
 
     //imgs[0]?.setAttribute('src','./card-products/gift-cards/gc1')

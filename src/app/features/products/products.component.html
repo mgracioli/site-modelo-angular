@@ -1,5 +1,4 @@
 <div class="products-container container-fluid">
-    
     <app-search-navigate-bar></app-search-navigate-bar>
 
     <section class="top-advertising-container row">
@@ -14,16 +13,8 @@
         <!-- essa div é só de exemplo para ter um contreudo no container, seria mais facil já criar uma imagem pronta e colocar ela como backgrund-->
         <div class="cards-container-header">
             <a class="bg-carousel-link" routerLink="/">
-                <img src="bg-blue.png" class="bg-carousel-img" alt="products-carousel-image">
+                <img src="bg-blue.png" class="bg-carousel-img" alt="products-carousel-image" loading="lazy">
             </a>
-
-            
-            <!-- <div class="cards-container-header-text">
-                <h1> Epic Daily Deals </h1>
-                <h3> Shop now, save more </h3>
-            </div>
-
-            <img src="bg-products-book.png" class="cards-container-header-img" alt="card container image"> -->
         </div>
 
         <div class="cards-container-cards-wrapper container-fluid">
@@ -36,7 +27,7 @@
                     
                         <div class="card-content p{{ prodsPerCard[i] }}">
                             <div class="card-product" *ngFor="let prods of [].constructor(prodsPerCard[i]); index as in">
-                                <img src="" class="{{ category }}" alt="{{ category }} product"> <!-- esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id)-->
+                                <img src="" class="{{ category }}" alt="{{ category }} product" loading="lazy"> <!-- esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id)-->
                                 <!-- <img id="card-img-cat-{{i}}-img{{in}}" alt="{{ category }} product"> esse id é para poder manipular a imagem por javascript (recupera a imagem e coloca ela como src dessa tag pelo id) -->
                         
                                 <p id="card-desc-{{in}}">

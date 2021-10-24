@@ -15,10 +15,8 @@
             <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <!-- [formGroup] é o que vai vincular a minha variavel formulario lá do .ts com esse formulario aqui - o (ngSubmit) fica ouvindo um evento de submit, que é disparado ao clicar no botão de criar conta -->
                 <div class="form-group" [ngClass]="applyCssFieldError('username')"> <!-- aplicaSccErro() retorna a classe 'has-error' do bootstrap que será aplicada a esse elemento caso esse campo não passe com sucesso pelos Validators -->
-                    
                     <label for="username" class="control-label">Username</label>
                     <input type="text" class="form-control" formControlName="username" id="username">
-                    <!-- <span class="glyphicon glyphicon-remove"></span> -->
                 </div>
 
                 <div class="form-group" [ngClass]="applyCssFieldError('email')">
@@ -29,8 +27,6 @@
                 <div class="form-group" [ngClass]="applyCssFieldError('password')">
                     <label for="password" class="control-label">Password</label>
                     <input type="password" class="form-control" formControlName="password" id="password">
-
-                    <!-- <i class="bi bi-eye-fill"></i> -->
                 </div>
 
                 <div class="address" formGroupName="address">

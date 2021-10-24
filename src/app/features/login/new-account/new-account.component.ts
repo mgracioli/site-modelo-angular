@@ -19,6 +19,8 @@ export class NewAccountComponent implements OnInit {
 	formulario!: FormGroup
 	states$!: Observable<BrState[]>
 
+	erro = false
+
 	constructor(
 		private formBuilder: FormBuilder,
 		private http: HttpClient,

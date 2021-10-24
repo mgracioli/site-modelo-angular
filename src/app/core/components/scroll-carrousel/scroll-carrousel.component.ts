@@ -28,6 +28,7 @@ export class ScrollCarrouselComponent implements OnInit {
 	preencheCardList(){
 		for (let i = 0; i < 18; i++) {
 			this.cardProducts.push({
+				id: i,
 				productDescription: 'Iphone X 32GB Camera 55mpx Rose Gold, Silver or Black Gorilla Glass',
 				price: '1.257,30',
 				storeName: 'Electronics & More State Avenue'

@@ -1,0 +1,253 @@
+$white: #fff;
+$dark-grey: #242424;
+$blue: #0db4ca; 
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    margin-bottom: 30px;
+}
+
+
+.breadcrumb{
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 0;
+    font-size: 1.6em;
+}
+
+.breadcrumb-item{
+    list-style: none;
+    color: $blue;
+}
+
+//breadcrumb-item é uma classe do bootstrap, eu estou modificando o separador dos itens nessa classe
+.breadcrumb-item:not(:first-child):before{
+    content: ">";
+}
+
+.breadcrumb-item a{
+    text-decoration: none;
+}
+
+.product-details-container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
+    min-width: 978px;   //se a tela for menor que 978px aparece uma barra de rolagem e os elementos param de tentar se adaptar ao tamanho da tela, se a tela for > 978px o elementos se adaptam a ela
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.curr-prod-container{
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //height: 100vh;
+    //width: 100%;
+    border: 1px solid orangered;
+}
+
+.curr-prod-caption{
+    height: 64px;
+    border: 1px solid violet;
+    font-size: 2.8em;
+    color: #404040;
+    font-weight: 400;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.curr-prod-details{
+    border: 1px solid rgb(23, 23, 143);
+    height: fit-content;
+    //display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.curr-prod-media{
+    border: 1px solid yellow;
+    //width: 100%;
+    height: 486px;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+}
+
+.curr-prod-main-img{
+   height: 406px;
+   width: 100%;
+   //height: 100%;
+   border: 1px solid black;
+   
+}
+
+.curr-prod-miniatures{
+    height: 80px;
+    width: 100%;
+    //display: grid;
+    //grid-template-columns: repeat(4, 1fr);
+    display: flex;
+}
+
+.curr-prod-miniatures li{
+    list-style: none;
+    width: 25%;
+    text-align: center;
+}
+
+
+.curr-prod-miniatures img{
+    object-fit: fill;
+    max-width: 100px;
+    height: 80px;
+}
+
+.curr-prod-sell-infos{
+    //height: 100%;
+    border: 1px solid rgb(0, 204, 255);
+    font-size: 1.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.client-rating-bar{
+    display: flex;
+    align-items: center;
+    //justify-content: space-evenly;
+    font-weight: 100;
+    height: 50px;
+}
+
+.client-rating-bar span{
+    margin-left: 5px;
+}
+
+.stars-percent{
+    display: inline-block;
+    width: 20%;
+    color: #FFCC03;
+    font-size: 1.3em
+}
+
+.seller-identification span img{
+    height: 20px;
+    width: 20px;
+    margin-bottom: 3px;
+}
+
+.price{
+    margin: 10px 0;
+}
+
+.no-discount-price{
+    color: #999999;
+}
+
+.discount-price span{
+    font-weight: 900;
+    font-size: 1.4em;
+    color: black;
+}
+
+.total-discount{
+    color: rgb(24, 182, 24);
+}
+
+.payment{
+    color: $dark-grey;
+    height: 40px;
+    line-height: 40px;
+}
+
+
+
+
+
+
+
+.payment-options{
+    //border: 1px solid $dark-grey;
+    height: fit-content;
+}
+
+.section-title{
+    padding-bottom: 7px;
+    border-bottom: 1px solid #c7c7c7;
+    width: 100%;
+    color: $blue;
+    font-size: 2.3em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.payment-method-container{
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.payment-method-container i{
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.payment-method-container h2{
+    font-size: 1.7em;
+    font-weight: 800;
+    display: inline;
+}
+
+.credit-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.general-cards{
+    width: 100%;
+}
+
+.cards-container{
+    display: flex;
+    justify-content: flex-start;  
+    margin-bottom: 8px; 
+    margin-left: 30px;
+    width: 100%;
+}
+
+.credit-card-icon{
+    width: 50px;
+    height: 40px;
+    list-style: none;
+    background: no-repeat center;
+    background-size: contain; 
+    margin-right: 10px;
+}
+
+.icon-visa{
+    background-image: url(./images/visa-icon.png);
+}
+.icon-mastercard{
+    background-image: url(./images/mastercard-icon.png);
+}
+.icon-diners{
+    background-image: url(./images/dinners-icon.png);
+}
+.icon-americanexpress{
+    background-image: url(./images/americanexpress-icon.png);
+}
+.icon-elo{
+    background-image: url(./images/elo-icon.png);
+}
+
+.price-method{
+    font-size: 16px;
+    margin-left: 30px;
+    color: $blue;
+}

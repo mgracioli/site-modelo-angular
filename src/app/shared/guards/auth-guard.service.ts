@@ -23,7 +23,7 @@ export class AuthGuardService implements CanLoad { /* CanLoad: função de não 
 
   private verifyAccess(){
     if(this.authService.userIsAuthenticated()){
-      return true;  //retornando true, o usuário poderá acessar a página
+      return true;  //retornando true, o usuário poderá acessar a página (já é redirecionado automaticamente para a página que chamou o 'canLoad')
     }
     this.router.navigate(['/login']); //se o usuário não estiver autenticado, volta para a página de login
     return false;

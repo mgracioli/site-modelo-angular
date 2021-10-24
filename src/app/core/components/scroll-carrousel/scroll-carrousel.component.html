@@ -2,7 +2,7 @@
     <div class="carousel-frame" id="carousel-frame">
         <div class="row carousel-list" id="carousel-list">
             <div class="carousel-card col-2" *ngFor="let cardProduct of cardProducts">
-                <a class="card-content" routerLinkActive="active" routerLink="/">
+                <a class="card-content" routerLinkActive="active" [routerLink]="['/products', cardProduct.id]"> <!--['/products', cardProduct.category, cardProduct.id] para poder passar mais de um parâmetro para a rota-->
                     <img src="assets/scroll-carousel/carousel-miniature.jpg" alt="{{ cardProduct.productDescription }}">
 
                     <div class="card-caption">

@@ -1,0 +1,119 @@
+<div class="product-details-container">
+    <ul class="breadcrumb" aria-label="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/products">Products</a></li>
+        <li class="breadcrumb-item"><a routerLink="">{{ productDetails.category }}</a></li>
+    </ul>
+
+    <section class="curr-prod-container">
+        <div class="curr-prod-caption">
+            {{ productDetails.description}}
+        </div>
+
+        <div class="curr-prod-details">
+            <div class="curr-prod-media">
+                <a class="curr-prod-main-img" routerLink="">
+                    <img src="assets/teste">
+                </a>
+
+                <ul class="curr-prod-miniatures">
+                    <li *ngFor="let miniature of miniatures">
+                        <a routerLink="">
+                            <img src="{{ miniature }}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="curr-prod-sell-infos">
+                <div class="client-rating-bar">
+                    <div class="stars">
+                        <div class="stars-percent">★</div>
+                        <div class="stars-percent">★</div>
+                        <div class="stars-percent">★</div>
+                        <div class="stars-percent">★</div>
+                        <div class="stars-percent">★</div>
+                    </div>
+                    <span>{{ productDetails.rating }}</span>
+                    <span>({{ productDetails.numberOfEvaluations }})</span>
+                </div>
+
+                <div class="seller-identification">
+                    Sold by <span>{{ productDetails.seller }} <img src="assets/brand-logo.png"></span><br>
+                    Shipped by <span>{{ productDetails.shipper }}</span>
+                </div>
+
+                <div class="price">
+                    <div class="no-discount-price"> from $ {{ productDetails.originalPrice }}</div>
+                    <div class="discount-price"> to <span>$ {{ productDetails.priceWithDiscount }}</span> a vista</div>
+                    <div *ngIf="productDetails.discountPercent != 0" class="total-discount"> ({{ productDetails.discountPercent }}% discount) </div>
+                </div>
+
+                <a class="payment" type="button" (click)="goToPaymentOptions()">More payment methods</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <h1 class="section-title">Related products</h1>
+        Seção carrossel de produtos relacionados
+    </section>
+
+    <section class="curr-prod-complete-details">
+        <h1 class="section-title">Product information</h1>
+        Seção dos detalhes completos do produto
+    </section>
+
+    <section class="clients-rating">
+        <h1 class="section-title">Client evaluation</h1>
+
+        Seção de avaliação de clientes
+    </section>
+
+    <section class="payment-options" id="payment-options">
+        <h1 class="section-title">Payment Methods</h1>
+
+        <div class="payment-method-container">
+            <i class="bi bi-credit-card"></i>
+            <h2>Credit cards</h2>
+            <div class="credit-card">
+                <div class="general-cards">
+                    <ul class="cards-container">
+                        <li class="credit-card-icon icon-visa"></li>
+                        <li class="credit-card-icon icon-mastercard"></li>
+                        <li class="credit-card-icon icon-diners"></li>
+                        <li class="credit-card-icon icon-americanexpress"></li>
+                        <li class="credit-card-icon icon-elo"></li>
+                    </ul>
+    
+                    <div class="credit price-method">
+                        1x de {{ productDetails.originalPrice }} sem juros<br>
+                        2x de {{ productDetails.originalPrice }} sem juros<br>
+                        3x de {{ productDetails.originalPrice }} sem juros<br>
+                        4x de {{ productDetails.originalPrice }} sem juros<br>
+                    </div>
+                </div>
+                
+                <ul class="cards-container brand-cards">
+    
+                </ul>
+            </div>
+        </div>  
+        
+        <div class="payment-method-container">
+            <i class="bi bi-upc"></i>
+            <h2>Boleto</h2>
+            <div class="boleto price-method">
+                $ {{ productDetails.originalPrice }} in cash
+            </div>
+        </div>
+
+        <div class="payment-method-container">
+            <i class="bi bi-phone"></i>
+            <h2>PIX</h2>
+            <div class="pix price-method">
+                $ {{ productDetails.originalPrice }} in cash
+            </div>
+        </div>
+    </section>
+</div>

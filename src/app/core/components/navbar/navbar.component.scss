@@ -13,7 +13,8 @@ $dark-grey: #242424;
 /*as classes estão com nome navb-* para não dar conflito com as classes do bootstrap*/
 
 .navb{
-    position: fixed;
+    //position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 10;
@@ -150,7 +151,7 @@ $dark-grey: #242424;
 }
 
 #hamburguer-check-box{
-    display: none;
+    display: none!important;
 }
 
 #hamburguer-check-box:checked ~ .navb-hamburguer .menu-hamburguer{  /*o ~ é para pegar apenas a primeira label após a checkbox*/
