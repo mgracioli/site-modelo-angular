@@ -41,7 +41,7 @@
                             
                             <select class="form-control" formControlName="state" id="state">
                                 <!-- Sempre que estiver lidando com dados vindos de observables, é sempre melhor utilizar o pipe async aqui no template do que fazer o subscribe do observable no componente (.ts) para evitar memory leaks -->
-                                <option *ngFor="let state of states$ | async" [value]="state.abbreviation">{{ state.name }}</option>
+                                <option *ngFor="let state of states$ | async" [value]="state.abbreviation">{{ state.name }}</option>               
                             </select>
                         </div>
                     </div>

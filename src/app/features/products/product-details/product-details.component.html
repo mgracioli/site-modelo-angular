@@ -12,17 +12,17 @@
 
         <div class="curr-prod-details">
             <div class="curr-prod-media">
-                <a class="curr-prod-main-img" routerLink="">
-                    <img src="assets/teste">
-                </a>
-
                 <ul class="curr-prod-miniatures">
                     <li *ngFor="let miniature of miniatures">
-                        <a routerLink="">
-                            <img src="{{ miniature }}">
+                        <a (click)="changeMainImg(miniature)">
+                            <img src="{{ miniature }}" loading="lazy">
                         </a>
                     </li>
                 </ul>
+
+                <a class="curr-prod-main-img" routerLink="">
+                    <img id="main-img" loading="lazy">
+                </a>
             </div>
 
             <div class="curr-prod-sell-infos">
@@ -44,8 +44,8 @@
                         </div>
                     </div>
                     <div class="rating-values">
-                        <!-- <span>{{ productDetails.rating }}</span>
-                        <span>({{ productDetails.numberOfEvaluations }})</span> -->
+                        <span>{{ productDetails.rating }}</span>
+                        <span>({{ productDetails.numberOfEvaluations }})</span>
                     </div>
                 </div>
 
@@ -57,12 +57,13 @@
                 <div class="price">
                     <div class="no-discount-price"> from $ {{ productDetails.originalPrice }}</div>
                     <div class="discount-price"> to <span>$ {{ productDetails.priceWithDiscount }}</span> a vista</div>
-                    <div *ngIf="productDetails.discountPercent != 0" class="total-discount"> ({{ productDetails.discountPercent }}% discount) </div>
+                    <div *ngIf="productDetails.discountPercent != 0" class="total-discount"> ({{
+                        productDetails.discountPercent }}% discount) </div>
                 </div>
 
                 <div class="product-colors" *ngIf="productDetails.colors[0] != null">
                     Color <span id="color-name"> </span>
-                    
+
                     <div class="colors-container">
                         <div *ngFor="let color of productDetails.colors">
                             <input id={{color}} name="inp-name" type="radio" (click)="changeColorName($event)">
@@ -111,7 +112,7 @@
                         <li class="credit-card-icon icon-americanexpress"></li>
                         <li class="credit-card-icon icon-elo"></li>
                     </ul>
-    
+
                     <div class="credit price-method">
                         1x de {{ productDetails.originalPrice }} sem juros<br>
                         2x de {{ productDetails.originalPrice }} sem juros<br>
@@ -119,13 +120,15 @@
                         4x de {{ productDetails.originalPrice }} sem juros<br>
                     </div>
                 </div>
-                
-                <ul class="cards-container brand-cards">
-    
-                </ul>
+
+                <div class="brand-cards">
+                    <ul class="cards-container">
+                        
+                    </ul>
+                </div>
             </div>
-        </div>  
-        
+        </div>
+
         <div class="payment-method-container">
             <i class="bi bi-upc"></i>
             <h2>Boleto</h2>
@@ -142,4 +145,10 @@
             </div>
         </div>
     </section>
+
+    <!-- <ng-template #spinner>
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </ng-template> -->
 </div>

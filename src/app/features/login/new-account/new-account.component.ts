@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { distinctUntilChanged, switchMap } from 'rxjs/operators'
+import { delay, distinctUntilChanged, switchMap } from 'rxjs/operators'
 import { Observable, of } from 'rxjs';
 
 import { FormValidations } from 'src/app/shared/form-validations/form-validations';

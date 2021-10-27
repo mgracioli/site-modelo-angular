@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { ProductDetailsService } from 'src/app/shared/services/product-details-service/product-details.service';
 import { ProductDetails } from '../models/product-details';
 
 @Component({
@@ -12,18 +11,19 @@ import { ProductDetails } from '../models/product-details';
 })
 export class ProductDetailsComponent implements OnInit, OnDestroy {
 
-  miniatures: string[] = ['assets/scroll-carousel/carousel-miniature.jpg', './images/miniature2.jpg', './images/miniature3.jpg', './images/miniature4.jpg']
+  miniatures: string[] = ['assets/scroll-carousel/carousel-miniature.jpg', 'assets/home/home-thumb-1.jpg', 'assets/scroll-carousel/carousel-miniature.jpg', 'assets/home/home-thumb-2.jpg', 'assets/home/home-thumb-3.jpg']
   productDetails!: ProductDetails
   inscricao!: Subscription
   //colorName!: string  //armazena o nome da cor do produto (caso haja mais de uma cor disponível)
 
   constructor(
-    private route: ActivatedRoute
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.getProductDetails()
     this.fillRatingStars(this.productDetails.rating)
+    this.changeMainImg(this.miniatures[0])  //inicializa a imagem principal como sendo a primeira imagem do array miniatures[]
   }
 
   /*************************************************
@@ -32,9 +32,10 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
    * @returns void
    *************************************************/
   private getProductDetails() {
-    this.inscricao = this.route.data.subscribe( /* data retorna um observable com os dados resolvidos pelo resolver da rota*/
+    this.inscricao = this.activatedRoute.data
+    .subscribe( /* data retorna um observable com os dados resolvidos pelo resolver da rota*/
       (info) => {
-        this.productDetails = info.productDetail;  /* esse productDetail do info.productDetail tem q ser o mesmo nome que foi passado como chave lá no parametro resolve do products-routing.module */
+        this.productDetails = info.productDetail  /* esse productDetail do info.productDetail tem q ser o mesmo nome que foi passado como chave lá no parametro resolve do products-routing.module */    
       }
     );
   }
@@ -73,6 +74,16 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     const element = document.getElementById('payment-options')
     element?.scrollIntoView({ behavior: "smooth" });
   }
+
+  /************************************************
+   * Método que faz a troca da imagem principal do produto sempre que for clicado em uma miniatura
+   * @returns void
+   * ***********************************************/
+  changeMainImg(miniatureUrl: string){
+    const mainImg = document.getElementById('main-img')
+    mainImg?.setAttribute('src', miniatureUrl)
+  }
+
 
   ngOnDestroy() {
     this.inscricao.unsubscribe();
