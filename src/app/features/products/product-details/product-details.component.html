@@ -1,11 +1,13 @@
 <div class="product-details-container">
-    <ul class="breadcrumb" aria-label="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/products">Products</a></li>
-        <li class="breadcrumb-item"><a routerLink="">{{ productDetails.category }}</a></li>
-    </ul>
-
-    <section class="curr-prod-container">
+    <section class="breadcrumb-sec">
+        <ul class="breadcrumb" aria-label="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+            <li class="breadcrumb-item"><a routerLink="/products">Products</a></li>
+            <li class="breadcrumb-item"><a routerLink="">{{ productDetails.category }}</a></li>
+        </ul>
+    </section>
+    
+    <section class="curr-prod-container-sec">
         <div class="curr-prod-caption">
             {{ productDetails.description}}
         </div>
@@ -55,10 +57,17 @@
                 </div>
 
                 <div class="price">
-                    <div class="no-discount-price"> from $ {{ productDetails.originalPrice }}</div>
-                    <div class="discount-price"> to <span>$ {{ productDetails.priceWithDiscount }}</span> a vista</div>
-                    <div *ngIf="productDetails.discountPercent != 0" class="total-discount"> ({{
-                        productDetails.discountPercent }}% discount) </div>
+                    <div *ngIf="productDetails.discountPercent != 0; then price_and_discount else only_price" class="total-discount"></div>
+                    
+                    <ng-template #price_and_discount>
+                        <div class="no-discount-price"> from $ {{ productDetails.originalPrice }}</div>
+                        <div class="discount-price"> to <span>$ {{ productDetails.priceWithDiscount }}</span> a vista</div>
+                        <div class="total-discount">({{productDetails.discountPercent }}% discount)</div>
+                    </ng-template>
+
+                    <ng-template #only_price>
+                        <div class="discount-price"><span>$ {{ productDetails.priceWithDiscount }}</span> a vista</div>
+                    </ng-template>
                 </div>
 
                 <div class="product-colors" *ngIf="productDetails.colors[0] != null">
@@ -67,6 +76,7 @@
                     <div class="colors-container">
                         <div *ngFor="let color of productDetails.colors">
                             <input id={{color}} name="inp-name" type="radio" (click)="changeColorName($event)">
+                            
                             <label for={{color}} class="color-option" [ngStyle]="{'background-color': color}">
                                 <i class="bi bi-check-circle-fill check-symbol"></i>
                             </label>
@@ -81,31 +91,42 @@
         </div>
     </section>
 
-    <section class="related-products">
-        <h1 class="section-title">Related products</h1>
-        Seção carrossel de produtos relacionados
+    <section class="related-products-sec">
+        <h1>Related products</h1>
+
+        <div class="related-products-container">
+            Seção carrossel de produtos relacionados
+        </div>   
     </section>
 
-    <section class="curr-prod-complete-details">
-        <h1 class="section-title">Product information</h1>
-        Seção dos detalhes completos do produto
+    <section class="curr-prod-complete-details-sec">
+        <h1>Product information</h1>
+
+        <div class="curr-prod-complete-details-container">
+            Seção dos detalhes completos do produto
+        </div>   
     </section>
 
-    <section class="clients-rating">
-        <h1 class="section-title">Client evaluation</h1>
+    <section class="clients-rating-sec">
+        <h1>Client evaluation</h1>
 
-        Seção de avaliação de clientes
+        <div class="clients-rating-container">
+            Seção de avaliação de clientes
+        </div>
+        
     </section>
 
-    <section class="payment-options" id="payment-options">
-        <h1 class="section-title">Payment Methods</h1>
+    <section class="payment-options-sec" id="payment-options">
+        <h1>Payment Methods</h1>
 
         <div class="payment-method-container">
             <i class="bi bi-credit-card"></i>
+            
             <h2>Credit cards</h2>
+            
             <div class="credit-card">
                 <div class="general-cards">
-                    <ul class="cards-container">
+                    <ul class="general cards-container">
                         <li class="credit-card-icon icon-visa"></li>
                         <li class="credit-card-icon icon-mastercard"></li>
                         <li class="credit-card-icon icon-diners"></li>
@@ -113,18 +134,24 @@
                         <li class="credit-card-icon icon-elo"></li>
                     </ul>
 
-                    <div class="credit price-method">
-                        1x de {{ productDetails.originalPrice }} sem juros<br>
-                        2x de {{ productDetails.originalPrice }} sem juros<br>
-                        3x de {{ productDetails.originalPrice }} sem juros<br>
-                        4x de {{ productDetails.originalPrice }} sem juros<br>
+                    <div class="price-method">
+                        1x de {{ productDetails.originalPrice | currency }} sem juros<br>
+                        2x de {{ productDetails.originalPrice/2 | currency }} sem juros<br>
+                        3x de {{ productDetails.originalPrice/3 | currency }} sem juros<br>
+                        4x de {{ productDetails.originalPrice/4 | currency }} sem juros<br>
                     </div>
                 </div>
 
                 <div class="brand-cards">
-                    <ul class="cards-container">
-                        
+                    <ul class="brand cards-container">
+                        <li class="credit-card-icon icon-brand1"></li>
+                        <li class="credit-card-icon icon-brand2"></li>
                     </ul>
+
+                    <div class="price-method">
+                        1x de {{ productDetails.originalPrice | currency }} sem juros<br>
+                        5x de {{ (productDetails.originalPrice/5)+3 | currency }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,7 +160,7 @@
             <i class="bi bi-upc"></i>
             <h2>Boleto</h2>
             <div class="boleto price-method">
-                $ {{ productDetails.originalPrice }} in cash
+                {{ productDetails.originalPrice | currency }} in cash
             </div>
         </div>
 
@@ -141,7 +168,7 @@
             <i class="bi bi-phone"></i>
             <h2>PIX</h2>
             <div class="pix price-method">
-                $ {{ productDetails.originalPrice }} in cash
+                {{ productDetails.originalPrice | currency }} in cash
             </div>
         </div>
     </section>

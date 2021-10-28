@@ -7,31 +7,6 @@ $blue: #0db4ca;
     padding: 0;
 }
 
-section{
-    margin-bottom: 30px;
-}
-
-.breadcrumb{
-    height: 50px;
-    line-height: 50px;
-    margin-bottom: 0;
-    font-size: 1.6em;
-}
-
-.breadcrumb-item{
-    list-style: none;
-    color: $blue;
-}
-
-//breadcrumb-item é uma classe do bootstrap, eu estou modificando o separador dos itens nessa classe
-.breadcrumb-item:not(:first-child):before{
-    content: ">";
-}
-
-.breadcrumb-item a{
-    text-decoration: none;
-}
-
 .product-details-container{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 10px;    //fonte padrão para facilitar na responsividade, já que todas as unidades de tamanho de fonte se baseiam nessa unidade aqui (por conta do REM). Ex.: 1.2rem = 12px
@@ -39,287 +14,346 @@ section{
     padding: 0 12px;
     display: flex;
     flex-direction: column;
+
+    section{
+        margin-bottom: 30px;
+    
+        h1{
+            padding-bottom: 7px;
+            border-bottom: 1px solid #c7c7c7;
+            width: 100%;
+            color: $blue;
+            font-size: 2.3em;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        & > div{    //apica margem nas divs que forem filhas diretas de uma section
+            margin-top: 20px;
+        }
+    }
+
+    .breadcrumb-sec{
+        margin: 0;
+
+        .breadcrumb{
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 0;
+            font-size: 1.6em;
+
+            //breadcrumb-item é uma classe do bootstrap, eu estou modificando o separador dos itens nessa classe
+            .breadcrumb-item{
+                list-style: none;
+                color: $blue;
+
+                &:not(:first-child):before{
+                    content: ">";
+                }
+
+                a{
+                    text-decoration: none;
+                }
+            }
+        } 
+    }
+
+    .curr-prod-container-sec{
+        
+        .curr-prod-caption{
+            height: 64px;
+            //border: 1px solid violet;
+            font-size: 2.8em;
+            color: #404040;
+            font-weight: 400;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .curr-prod-details{
+            height: fit-content;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-content: center;
+
+            .curr-prod-media{
+                height: 486px;
+                display: flex;
+
+                .curr-prod-miniatures{
+                    height: 100%;
+                    width: 110px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    li{
+                        list-style: none;
+                        height: 100%;
+                    }
+
+                    img{
+                        border: 1px solid transparent;
+                        object-fit: contain;
+                        width: 100%;
+                        height: 100%;
+
+                        &:hover{
+                            border: 1px solid $blue;
+                            border-radius: 5px;
+                        }
+                    }  
+                }
+
+                .curr-prod-main-img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    display: flex;
+                    transition: all 1s ease-in-out;
+
+                    img{
+                        max-height: 90%;    //max-height e width para a imagem se ajustar na altura e na largura conforme aumenta ou diminui a tela
+                        max-width: 90%;
+                        margin: auto;
+                    }
+                }
+            }
+
+            .curr-prod-sell-infos{
+                font-size: 1.6em;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .client-rating-bar{
+                    display: flex;
+                    align-items: flex-start;
+                    font-weight: 100;
+                    height: 50px;
+                
+                    .stars{
+                        height: 100%;
+                        position: relative;
+                        font-size: 22px;
+                        width: 91px;    //esse width está relacionado com a função fillRatingStars(), portanto, se alterar essa propriedade, as cores das estrelas não vão funcionar corretamente
+                        
+                        .background-stars{
+                            position: absolute;
+                            color: #E5E5E5;
+                        }
+                        
+                        .colored-stars{
+                            position: absolute;
+                            overflow: hidden;
+                            color: #FFCC03;
+                        }
+                
+                        .stars-percent{
+                            display: inline;
+                        }
+                    }
+                
+                    .rating-values{
+                        margin-top: 5px;
+                
+                        span{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                .seller-identification{
+                    margin: 10px 0;
+                
+                    span img{
+                        height: 20px;
+                        width: 20px;
+                        margin-bottom: 3px;
+                    }
+                }
+                
+                .price{
+                    margin: 10px 0;
+                
+                    .no-discount-price{
+                        color: #999999;
+                    }
+                
+                    .discount-price span{
+                        font-weight: 900;
+                        font-size: 1.4em;
+                        color: black;
+                    }
+                
+                    .total-discount{
+                        color: rgb(24, 182, 24);
+                    }
+                }
+
+                .product-colors{
+                    margin: 10px 0;
+                
+                    .colors-container{
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                
+                        div{
+                            height: 100%;
+                        }
+                
+                        input{
+                            display: none;
+                
+                            &:checked + label{
+                                border: 3px dotted rgb(24, 182, 24);
+                
+                                i{
+                                    display: block;
+                                }
+                            }
+                        }
+                        
+                        .color-option{
+                            border: 3px dotted transparent;
+                            position: relative;
+                            width: 40px;
+                            height: 80%;
+                            margin-right: 10px;
+                    
+                            &:hover{
+                                cursor: pointer;
+                            }
+                    
+                            i{
+                                font-size: 0.8em;
+                                position: absolute;
+                                bottom: -9px;
+                                right: -6px;
+                                color: rgb(24, 182, 24);
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                
+                .payment{
+                    color: $dark-grey;
+                    height: 40px;
+                    line-height: 40px;
+                
+                    a{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .related-products-sec{
+        height: 300px;
+    }
+
+    .curr-prod-complete-details-sec{
+        height: 300px;
+    }
+
+    .clients-rating-sec{
+        height: 300px;
+    }
+
+    .payment-options-sec{
+        height: fit-content;
+
+        .payment-method-container{
+            height: fit-content;
+            //margin-top: 20px;
+
+            i{
+                font-size: 2em;
+                margin-right: 10px;
+            }
+
+            h2{
+                font-size: 1.7em;
+                font-weight: 800;
+                display: inline;
+            }
+
+            .credit-card{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                
+                .cards-container{
+                    display: flex;
+                    justify-content: flex-start;  
+                    margin-bottom: 8px; 
+                    margin-left: 30px;
+                    width: 100%;
+                }  
+
+                .credit-card-icon{
+                    width: 50px;
+                    height: 40px;
+                    list-style: none;
+                    background: no-repeat center;
+                    background-size: contain; 
+                    margin-right: 10px;
+                }
+
+                .general-cards{
+                    width: 100%;
+                    border-right: 1px solid #c7c7c7; 
+
+                    .general{
+                        width: fit-content;
+
+                        .icon-visa{
+                            background-image: url(./images/visa-icon.png);
+                        }
+                        .icon-mastercard{
+                            background-image: url(./images/mastercard-icon.png);
+                        }
+                        .icon-diners{
+                            background-image: url(./images/dinners-icon.png);
+                        }
+                        .icon-americanexpress{
+                            background-image: url(./images/americanexpress-icon.png);
+                        }
+                        .icon-elo{
+                            background-image: url(./images/elo-icon.png);
+                        }
+                    }
+                }
+
+                .brand-cards{
+                    width: 100%;
+
+                    .brand{
+                        width: fit-content;
+
+                        .icon-brand1{
+                            background-image: url();
+                            border: 1px solid black;
+                        }
+
+                        .icon-brand2{
+                            background-image: url();
+                            border: 1px solid black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .price-method{
+            font-size: 16px;
+            margin-left: 30px;
+            color: $blue;
+        }
+    }
 }
 
-.curr-prod-container{
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    //height: 100vh;
-    //width: 100%;
-    //border: 1px solid orangered;
-}
-
-.curr-prod-caption{
-    height: 64px;
-    //border: 1px solid violet;
-    font-size: 2.8em;
-    color: #404040;
-    font-weight: 400;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.curr-prod-details{
-    //border: 1px solid rgb(23, 23, 143);
-    height: fit-content;
-    //display: flex;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    justify-content: center;
-}
-
-.curr-prod-media{
-    //border: 1px solid yellow;
-    //width: 100%;
-    height: 486px;
-    display: flex;
-    //flex-direction: column;
-    //align-items: center;
-}
-
-.curr-prod-miniatures{
-    height: 100%;
-    width: 110px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.curr-prod-miniatures li{
-    list-style: none;
-    height: 100%;
-}
-
-.curr-prod-miniatures img{
-    border: 1px solid transparent;
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-}
-
-.curr-prod-miniatures img:hover{
-    border: 1px solid $blue;
-    border-radius: 5px;
-}
-
-.curr-prod-main-img{
-    height: 100%;
-    width: 100%;
-    //border: 1px solid black;
-    object-fit: cover;
-    display: flex;
-    transition: all 1s ease-in-out;
-}
-
-#main-img{
-    max-height: 90%;    //max-height e width para a imagem se ajustar na altura e na largura conforme aumenta ou diminui a tela
-    max-width: 90%;
-    margin: auto;
-}
-
-.curr-prod-sell-infos{
-    //border: 1px solid rgb(0, 204, 255);
-    font-size: 1.6em;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.client-rating-bar{
-    //display: flex;
-    //align-items: center;
-    //justify-content: space-evenly;
-    font-weight: 100;
-    height: 50px;
-}
-
-.stars{
-    position: relative;
-    font-size: 22px;
-    width: 91px;    //esse width está relacionado com a função fillRatingStars(), portanto, se alterar essa propriedade, as cores das estrelas não vão funcionar corretamente
-}
-
-.background-stars{
-    position: absolute;
-    color: #E5E5E5;
-}
-
-.colored-stars{
-    //width: 10%; //o atributo width, que serve para colorir as estrelas de acordo com o valor da avaliação dos clientes é dinâmico e definido na função fillRatingStars()
-    position: absolute;
-    overflow: hidden;
-    color: #FFCC03;
-}
-
-.stars-percent{
-    display: inline;
-}
-
-.rating-values{
-    position: relative;
-}
-
-.client-rating-bar span{
-    margin-left: 5px;
-}
-
-.seller-identification span img{
-    height: 20px;
-    width: 20px;
-    margin-bottom: 3px;
-}
-
-.price{
-    margin: 10px 0;
-}
-
-.no-discount-price{
-    color: #999999;
-}
-
-.discount-price span{
-    font-weight: 900;
-    font-size: 1.4em;
-    color: black;
-}
-
-.total-discount{
-    color: rgb(24, 182, 24);
-}
-
-.colors-container{
-    height: 50px;
-    display: flex;
-    align-items: center;
-}
-
-.colors-container > div{
-    height: 100%;
-}
-
-.color-option{
-    width: 40px;
-    height: 80%;
-    margin-right: 10px;
-    border: 1px solid $dark-grey;
-}
-
-.color-option:hover{
-    cursor: pointer;
-}
-
-.colors-container input{
-    display: none;
-}
-
-.colors-container label{
-    border: 3px dotted transparent;
-    position: relative;
-}
-
-.colors-container i{
-    font-size: 0.8em;
-    position: absolute;
-    bottom: -9px;
-    right: -6px;
-    color: rgb(24, 182, 24);
-    display: none;
-}
-
-.colors-container input:checked + label{
-    border: 3px dotted rgb(24, 182, 24);
-} 
-.colors-container input:checked + label i{
-    display: block;
-} 
-
-.payment{
-    color: $dark-grey;
-    height: 40px;
-    line-height: 40px;
-}
-
-.payment a{
-    text-decoration: underline;
-}
-
-.payment-options{
-    height: fit-content;
-}
-
-.section-title{
-    padding-bottom: 7px;
-    border-bottom: 1px solid #c7c7c7;
-    width: 100%;
-    color: $blue;
-    font-size: 2.3em;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-.payment-method-container{
-    height: fit-content;
-    margin-top: 20px;
-}
-
-.payment-method-container i{
-    font-size: 2em;
-    margin-right: 10px;
-}
-
-.payment-method-container h2{
-    font-size: 1.7em;
-    font-weight: 800;
-    display: inline;
-}
-
-.credit-card{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.general-cards{
-    width: 100%;
-}
-
-.cards-container{
-    display: flex;
-    justify-content: flex-start;  
-    margin-bottom: 8px; 
-    margin-left: 30px;
-    width: 100%;
-}
-
-.credit-card-icon{
-    width: 50px;
-    height: 40px;
-    list-style: none;
-    background: no-repeat center;
-    background-size: contain; 
-    margin-right: 10px;
-}
-
-.icon-visa{
-    background-image: url(./images/visa-icon.png);
-}
-.icon-mastercard{
-    background-image: url(./images/mastercard-icon.png);
-}
-.icon-diners{
-    background-image: url(./images/dinners-icon.png);
-}
-.icon-americanexpress{
-    background-image: url(./images/americanexpress-icon.png);
-}
-.icon-elo{
-    background-image: url(./images/elo-icon.png);
-}
-
-.price-method{
-    font-size: 16px;
-    margin-left: 30px;
-    color: $blue;
-}
