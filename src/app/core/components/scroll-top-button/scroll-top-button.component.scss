@@ -12,10 +12,8 @@ $white: rgb(255, 255, 255);
     background-color: rgba($white, 0.90);
     box-shadow: 2px 1px 6px #8e8e8eda;
     cursor: pointer;
-    transition: transform 0.02s;
-    transform: rotateX(90deg);  //esconde o botão
-    transition: opacity 0.5s ease-out;
-    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.1,0.82,0.25,1);
+    transform: scale(0,0);
 }
 
 .btn-to-top{
@@ -29,7 +27,6 @@ $white: rgb(255, 255, 255);
     height: 50px;
     border: 0.5px solid #234d59;
     border-radius: 50%;
-    transition: background-color .2s ease-in;
 }
 
 .btn-to-top:hover{
@@ -44,6 +41,5 @@ $white: rgb(255, 255, 255);
 }
 
 .showBtn{
-    transform: rotateX(0deg); //mostra o botão
-    opacity: 1;
+    transform: scale(1,1);
 }

@@ -12,7 +12,7 @@
             </h2>
 
             <!--formGroupName="endereco" é o grupo maior que engloba os campos de cep, numero, complemento, bairro, cidade e estado, assim como foi feito lá no .ts-->
-            <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
                 <!-- [formGroup] é o que vai vincular a minha variavel formulario lá do .ts com esse formulario aqui - o (ngSubmit) fica ouvindo um evento de submit, que é disparado ao clicar no botão de criar conta -->
                 <div class="form-group" [ngClass]="applyCssFieldError('username')"> <!-- aplicaSccErro() retorna a classe 'has-error' do bootstrap que será aplicada a esse elemento caso esse campo não passe com sucesso pelos Validators -->
                     <label for="username" class="control-label">Username</label>

@@ -1,13 +1,12 @@
 /* ESSE RESOLVER FAZ O PRÉ CARREGAMENTO DOS DADOS DO PRODUTO
 JÁ NO MÓDULO DE ROTEAMENTO, OU SEJA, CARREGA OS DADOS 
-ANTES DE RENDERIZAR O TEMPLATE
+ANTES DE SEREM RENDERIZADOS O TEMPLATE
 */
-
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
 
-import { ProductDetails } from "../../features/products/models/product-details";
+import { ProductDetails } from "../services/product-details-service/product-details";
 import { ProductDetailsService } from "../services/product-details-service/product-details.service";
 
 @Injectable()

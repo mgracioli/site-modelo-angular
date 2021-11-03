@@ -1,3 +1,5 @@
+//NAO ESTÁ SENDO USADO
+
 export interface cardProducts{ 
     'products': [
         {   'category' : 'Gift Cards',

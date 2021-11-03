@@ -32,11 +32,15 @@
         "rating": 5,
         "numberOfEvaluations": 50,
         "seller": "Tables and More",
-        "shipper": "Top Furnture",
+        "shipper": "Top Furniture",
         "originalPrice": 104.909,
         "discountPercent": 20,
         "priceWithDiscount": 83.92,
-        "colors": {}
+        "colors": [
+            "#ff00ff",
+            "#eab003",
+            "#0abab5"
+        ]
     },
     {   
         "category": "Furniture",

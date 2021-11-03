@@ -1,6 +1,7 @@
 $white: #fff;
 $dark-grey: #242424;
 $blue: #0db4ca; 
+$green: #58C22E;
 
 *{
     margin: 0;
@@ -75,7 +76,7 @@ $blue: #0db4ca;
         .curr-prod-details{
             height: fit-content;
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1.8fr 1fr;
             justify-content: center;
 
             .curr-prod-media{
@@ -112,7 +113,6 @@ $blue: #0db4ca;
                     width: 100%;
                     object-fit: cover;
                     display: flex;
-                    transition: all 1s ease-in-out;
 
                     img{
                         max-height: 90%;    //max-height e width para a imagem se ajustar na altura e na largura conforme aumenta ou diminui a tela
@@ -167,8 +167,12 @@ $blue: #0db4ca;
 
                 .seller-identification{
                     margin: 10px 0;
-                
-                    span img{
+                    
+                    a{
+                        color: #212529;
+                    }
+
+                    a img{
                         height: 20px;
                         width: 20px;
                         margin-bottom: 3px;
@@ -182,20 +186,21 @@ $blue: #0db4ca;
                         color: #999999;
                     }
                 
-                    .discount-price span{
+                    .final-price{
                         font-weight: 900;
                         font-size: 1.4em;
-                        color: black;
+                        color: #212529;
                     }
                 
                     .total-discount{
-                        color: rgb(24, 182, 24);
+                        color: $green;
                     }
                 }
 
                 .product-colors{
-                    margin: 10px 0;
-                
+                    margin-top: 5px;
+                    height: fit-content;
+
                     .colors-container{
                         height: 50px;
                         display: flex;
@@ -209,7 +214,7 @@ $blue: #0db4ca;
                             display: none;
                 
                             &:checked + label{
-                                border: 3px dotted rgb(24, 182, 24);
+                                border: 3px dotted $green;
                 
                                 i{
                                     display: block;
@@ -233,7 +238,7 @@ $blue: #0db4ca;
                                 position: absolute;
                                 bottom: -9px;
                                 right: -6px;
-                                color: rgb(24, 182, 24);
+                                color: $green;
                                 display: none;
                             }
                         }
@@ -242,11 +247,120 @@ $blue: #0db4ca;
                 
                 .payment{
                     color: $dark-grey;
-                    height: 40px;
-                    line-height: 40px;
+                    font-size: 16px;
+                    height: fit-content;
+                    margin: 10px 0;
                 
                     a{
                         text-decoration: underline;
+                    }
+                }
+
+                .add-to-cart-container{
+                    margin: 5px 0;
+
+                    .btn-add-to-cart{
+                        font-size: 16px;
+                        text-align: center;
+                        background-color: $green;
+                        border-radius: 4px;
+                        color: $white;
+                        width: 100%;
+                        padding: 8px 0;
+                        margin: 10px 0;
+                        text-decoration: none;
+                    }
+
+                    .btn-add-to-cart i{
+                        margin-right: 10px;
+                    }
+                    
+                    .btn-add-to-cart:hover{
+                        background-color: #4ba727;
+                    }
+                } 
+
+                .calc-frete-container{
+                    .input-btn-frete-container{
+                        margin: 15px 0;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .input-btn-frete-container input{
+                        font-size: 15px;
+                        line-height: 15px;
+                        padding: 10px 10px 10px 0;
+                        border: 1px solid #E5E5E5;
+                        border-right: none;
+                        border-radius: 4px 0 0 4px;
+                        height: 40px;
+                        width: 120px;
+                        background: 0 0;
+                        color: #111;
+                        background-color: $white;
+                        outline: 0;
+                        -webkit-appearance: none;
+                        box-shadow: none;
+                        text-indent: 8px;
+                    }
+                    
+                    .input-btn-frete-container button{
+                        height: 40px;
+                        width: 45px;
+                        border-radius: 0 4px 4px 0;
+                        background-color: #F4F4F4;
+                        border: 1px solid #E5E5E5;
+                        border-left: none;
+                        font-size: 16px; //tamanho do icone da lupa de busca
+                        margin-right: 10px;
+                    }
+
+                    .input-btn-frete-container a{
+                        color: #8C8C8C;
+                    }    
+                }
+
+                .frete-details{
+                    .address{
+                        padding-bottom: 10px; 
+                        font-size: 14px;
+                        color: #8C8C8C;
+                    }
+
+                    p{
+                        font-size: 14px;
+                        padding: 10px 0;
+                        color: #8C8C8C;
+                        line-height: normal;
+                    }
+
+                    .address-table{
+                        
+                        .table-row{
+                            border-bottom: 1px solid #c7c7c7;
+                            
+                            .shipping-info{
+                                width: 65%;
+                            }
+
+                            .frete-value{
+                                text-align: center;
+                                color: #0083ca;
+                                width: 35%;
+                            }
+
+                            .frete-free{
+                                text-align: center;
+                                color: $green;
+                                font-weight: 600;
+                                width: 35%;
+                            }
+                        }
+                    } 
+
+                    .frete-disclaimer{
+                        text-align: justify;
                     }
                 }
             }
@@ -270,7 +384,6 @@ $blue: #0db4ca;
 
         .payment-method-container{
             height: fit-content;
-            //margin-top: 20px;
 
             i{
                 font-size: 2em;
